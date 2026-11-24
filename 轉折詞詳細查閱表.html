@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- Standalone snapshot. Shared editable sources: transition-reference-data.js, transition-reference.css, transition-reference.js. -->
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高中英文作文｜轉折詞與長句查閱表</title>
+  <meta name="description" content="13 類高中英文作文轉承語、可套用長句、中英例句與文法提醒。可搜尋、複製及列印。">
+  <style>
+.reference-library { --ref-line: #d6ded7; color: var(--ink, #1d2a26); margin: 24px 0 38px; }
+.reference-library [hidden] { display: none !important; }
+.reference-library * { box-sizing: border-box; }
+.reference-library a { color: var(--green-dark, #164a3b); text-underline-offset: 3px; }
+.reference-library :is(button, input, summary, a):focus-visible { outline: 3px solid #256d58; outline-offset: 3px; }
+.reference-library button { font: inherit; cursor: pointer; }
+.reference-library p { margin: 6px 0 12px; }
+.reference-library h3 { margin: 0 0 12px; font-size: 1.25rem; }
+.ref-intro { padding: 23px; border: 1px solid var(--ref-line); border-radius: 18px; background: #eef5ef; }
+.ref-intro .ref-eyebrow { color: #256d58; font-size: .76rem; letter-spacing: .13em; font-weight: 800; }
+.ref-note { color: #53645b; font-size: .88rem; }
+.ref-priority-note { padding: 12px 15px; border-left: 4px solid #43835b; background: #f8fbf8; border-radius: 0 10px 10px 0; }
+.ref-key-primary { color: #245b39; font-weight: 750; }
+.ref-key-alternative { color: #8b461c; font-weight: 750; }
+.ref-sequence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; margin: 18px 0; }
+.ref-sequence article { min-width: 0; padding: 18px; border: 1px solid #bed4bf; background: #f0f7f1; border-radius: 14px; }
+.ref-sequence strong { display: block; color: #164a3b; }
+.ref-sequence .ref-en { font-size: 1.05rem; margin: 8px 0; }
+.ref-en { font-family: Georgia, 'Times New Roman', serif; line-height: 1.7; overflow-wrap: anywhere; }
+.ref-slot { color: #46514b; background: #e9eeeb; border-radius: 3px; padding: 1px 3px; font-family: 'Microsoft JhengHei', sans-serif; font-size: .85em; }
+.ref-zh { display: block; color: #56685d; font-family: 'Microsoft JhengHei', system-ui, sans-serif; font-size: .83rem; line-height: 1.7; margin-top: 7px; }
+.ref-fixed-count { font-size: .78rem; color: #627268; }
+.ref-sample, .ref-evidence, .ref-grammar, .ref-category-picker { border: 1px solid var(--ref-line); background: #fffdf8; border-radius: 14px; margin: 14px 0; }
+.reference-library summary { padding: 15px 18px; cursor: pointer; font-weight: 750; }
+.reference-library summary:hover { background: #edf4ef; border-radius: 13px; }
+.ref-detail-body { padding: 0 18px 18px; }
+.ref-sample .ref-detail-body { max-width: 850px; }
+.ref-sample .ref-en { line-height: 1.9; }
+.ref-controls { padding: 20px 0 14px; }
+.ref-search-label { display: block; font-weight: 800; margin-bottom: 7px; }
+.ref-search-row { display: flex; gap: 10px; align-items: stretch; }
+.ref-search-row input { min-width: 0; flex: 1; width: auto; border: 1px solid #9dae9e; border-radius: 10px; padding: 12px 14px; font: inherit; color: #1d2a26; background: #fffdf8; }
+.ref-button { display: inline-flex; align-items: center; justify-content: center; padding: 9px 13px; border: 1px solid #a6bcad; border-radius: 10px; color: #164a3b; background: #fffdf8; font-size: .85rem !important; line-height: 1.5; white-space: normal; }
+.ref-button:hover { background: #dcece5; }
+.ref-button[aria-pressed='true'] { color: #fff; background: #164a3b; border-color: #164a3b; }
+.ref-filters, .ref-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ref-actions { justify-content: space-between; align-items: center; }
+.ref-actions > div { display: flex; gap: 8px; flex-wrap: wrap; }
+.ref-results { margin: 0 !important; font-size: .88rem; color: #526457; }
+.ref-category { margin: 12px 0; border: 1px solid var(--ref-line); border-radius: 14px; overflow: hidden; background: #fffdf8; scroll-margin-top: 24px; }
+.ref-category > summary { color: #164a3b; background: #edf4ef; }
+.ref-category > summary .ref-count { margin-left: 8px; color: #526457; font-size: .8rem; font-weight: 500; }
+.ref-category .ref-purpose { margin: 0; padding: 10px 18px; color: #53645b; font-size: .86rem; }
+.ref-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .86rem; }
+.ref-table th, .ref-table td { text-align: left; vertical-align: top; padding: 14px; border-top: 1px solid var(--ref-line); overflow-wrap: anywhere; }
+.ref-table thead th { background: #f3f1e8; color: #415648; font-size: .8rem; }
+.ref-table th:nth-child(1) { width: 20%; }
+.ref-table th:nth-child(2) { width: 25%; }
+.ref-table th:nth-child(3) { width: 33%; }
+.ref-table th:nth-child(4) { width: 22%; }
+.ref-table tbody tr[data-ref-priority='primary'] { --ref-row-ink: #245b39; background: #f0f7f1; }
+.ref-table tbody tr[data-ref-priority='alternative'] { --ref-row-ink: #8b461c; background: #fff7ee; }
+.ref-table td:first-child { border-left: 3px solid var(--ref-row-ink); }
+.ref-table td:nth-child(-n+2) > .ref-en { color: var(--ref-row-ink); }
+.ref-table td .ref-en { font-size: 1rem; }
+.ref-row-tag { display: inline-block; border: 1px solid #bed4bf; border-radius: 5px; background: #e6f0e4; color: #31563a; padding: 2px 6px; font-size: .72rem; margin-bottom: 7px; }
+.ref-row-tag.alternative { background: #fff0df; border-color: #e7c396; color: #7b4423; }
+.ref-copy { display: block; margin-top: 12px; font-size: .76rem !important; padding: 5px 10px; }
+.ref-empty { padding: 24px; background: #fff4e5; border-radius: 12px; }
+.ref-evidence ul, .ref-grammar ul { padding-left: 22px; }
+.ref-evidence li, .ref-grammar li { margin: 12px 0; }
+.ref-copy-status { min-height: 1.7em; font-size: .85rem; color: #256d58; }
+.reference-legacy { margin-top: 30px; }
+.reference-legacy > summary { padding: 15px; margin-bottom: 14px; color: #164a3b; font-weight: 800; cursor: pointer; border: 1px solid #d6ded7; border-radius: 12px; }
+.reference-page { margin: 0; background: #f5f0e6; color: #1d2a26; font-family: 'Microsoft JhengHei', system-ui, sans-serif; line-height: 1.7; }
+.reference-page-main { max-width: 1200px; padding: 35px 20px; margin: auto; }
+.reference-page h1 { color: #164a3b; font-size: clamp(1.65rem, 4vw, 2.4rem); margin: 12px 0; }
+.ref-back { color: #164a3b; text-underline-offset: 4px; }
+@media (max-width: 720px) {
+  .ref-sequence { grid-template-columns: 1fr; }
+  .ref-intro { padding: 17px; }
+  .ref-table, .ref-table tbody, .ref-table tr, .ref-table td { display: block; width: 100%; }
+  .ref-table thead { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+  .ref-table td { border-top: 0; padding: 7px 16px; }
+  .ref-table tr { padding: 12px 0; border-top: 1px solid var(--ref-line); }
+  .ref-table td::before { content: attr(data-label); display: block; font-family: 'Microsoft JhengHei', sans-serif; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: #657669; margin-bottom: 4px; }
+  .ref-search-row { flex-wrap: wrap; }
+  .ref-search-row input { flex-basis: 100%; }
+  .ref-search-row .ref-button { flex: 1; }
+  .ref-actions { align-items: flex-start; gap: 10px; }
+  .reference-page-main { padding: 20px 10px; }
+}
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  body { background: white !important; }
+  body > :not(main):not(.reference-page-main), body:not(.reference-page) main > :not(#transitions), #transitions > .shell > :not(.reference-library) { display: none !important; }
+  .reference-page-main > :not(.reference-library) { display: none !important; }
+  #transitions, #transitions .shell, .reference-page-main, .reference-library { padding: 0; margin: 0; width: 100%; max-width: none; background: white; }
+  .ref-controls, .ref-copy, .ref-copy-status, .ref-category-picker, .ref-actions, .ref-empty { display: none !important; }
+  .reference-library { font-size: 10pt; }
+  .ref-intro { border: 0; padding: 0; }
+  .ref-category { border: 0; border-radius: 0; overflow: visible; }
+  .ref-category > summary { break-after: avoid; padding: 8px 0; }
+  .ref-table { display: table; table-layout: fixed; font-size: 9pt; }
+  .ref-table thead { position: static; display: table-header-group; width: auto; height: auto; clip-path: none; }
+  .ref-table tbody { display: table-row-group; }
+  .ref-table tr { display: table-row; break-inside: avoid; }
+  .ref-table td { display: table-cell; width: auto; padding: 9px; border-top: 1px solid #ccc; }
+  .ref-table td::before { display: none; }
+  .ref-table td .ref-en { font-size: 10pt; }
+  .ref-zh { font-size: 9pt; }
+  .ref-sequence { grid-template-columns: 1fr 1fr; }
+  .ref-sequence article { break-inside: avoid; }
+  .ref-category > summary::marker, .ref-sample > summary::marker { content: ''; }
+  .ref-evidence, .ref-grammar { break-inside: auto; }
+  a { text-decoration: none; }
+}
+</style>
+</head>
+<body class="reference-page">
+  <main class="reference-page-main">
+    <a class="ref-back" href="index.html#transitions">← 回到 StepWrite 作文工作坊</a>
+    <h1>轉折詞與長句查閱表</h1>
+    <div id="transitionReference"><noscript>請開啟瀏覽器的 JavaScript 以查看互動查閱表。</noscript></div>
+  </main>
+  <script>
+/* Original teaching templates and examples; source guidance is documented in the reference panel. */
+window.transitionReference = {
+  categories: [
+    ['first', '第一點／開啟理由', '提出第一個理由；每一段只挑一種開頭。'],
+    ['second', '第二點／增加理由', '承接第一點，加入不同面向的理由。'],
+    ['third', '第三點／最後一點', '以 Last but not least 帶出最後一個仍重要的理由。'],
+    ['addition', '補充與遞進', '同方向加資料；不一定是另一個獨立理由。'],
+    ['example', '舉例與具體化', '把抽象想法變成看得見的情境。'],
+    ['result', '結果與影響', '從已交代的原因推到合理結果。'],
+    ['contrast', '對比與相反', '比較不同事物、觀點或特徵。'],
+    ['concession', '讓步與保留', '先承認一部分，再說自己的判斷。'],
+    ['opinion', '立場與偏好', '說清楚自己的選擇與觀點。'],
+    ['clarification', '解釋與換句話說', '把剛才的概念說得更清楚。'],
+    ['emphasis', '強調與聚焦', '指出最重要或容易被忽略的細節。'],
+    ['bridge', '圖片描述與段落銜接', '從圖片的觀察，轉進下一段的個人想法。'],
+    ['conclusion', '結論與回扣主題', '回收已寫過的重點，重申立場或提出呼籲。'],
+  ],
+  // Columns: category, expression, meaning, template, example, translation, usage, priority.
+  rows: [
+    ['first', 'To begin with, one important reason is that …', '首先，一個重要的理由是……', 'To begin with, one important reason is that [完整理由句].', 'To begin with, one important reason is that a quiet park gives students a place to take a break from schoolwork.', '首先，一個重要的理由是，安靜的公園讓學生有地方可以暫時放下功課、休息一下。', 'that 後直接接主詞與動詞，不加逗號。一般理由的首選。', '優先背'],
+    ['first', 'First of all, I would like to point out that …', '首先，我想指出……', 'First of all, I would like to point out that [完整觀點句].', 'First of all, I would like to point out that a safe walking path allows people of all ages to exercise.', '首先，我想指出，安全的步道讓各個年齡層的人都能運動。', '較有引導讀者的語氣。觀點後仍要補理由或例子。', '可替換'],
+    ['first', 'One of the main reasons for … is that …', '……的主要理由之一是……', 'One of the main reasons for [名詞／V-ing] is that [完整理由句].', 'One of the main reasons for joining a school club is that students can make friends with similar interests.', '參加學校社團的主要理由之一是，學生能結交興趣相近的朋友。', 'one of + 複數 reasons；整個主詞是 one，後面用 is。', '可替換'],
+    ['first', 'To start with, … plays an important role in …', '首先，……在……方面扮演重要角色', 'To start with, [單數名詞／V-ing] plays an important role in [名詞／V-ing].', 'To start with, regular exercise plays an important role in helping teenagers manage stress.', '首先，規律運動在幫助青少年紓解壓力方面扮演重要角色。', '複數主詞改用 play；in 後接名詞或 V-ing。可再補一個具體好處。', '可替換'],
+    ['first', 'The first reason why I … is that …', '我……的第一個理由是……', 'The first reason why I [動詞片語] is that [完整理由句].', 'The first reason why I prefer a natural park is that its quiet surroundings help me clear my mind.', '我偏好自然公園的第一個理由是，安靜的環境能幫助我整理思緒。', 'why 子句描述選擇；is that 引出原因。先確認兩邊主詞動詞完整。', '可替換'],
+    ['first', 'First and foremost, it is important to remember that …', '首先且最重要的是，要記得……', 'First and foremost, it is important to remember that [完整重點句].', 'First and foremost, it is important to remember that students need enough sleep to stay focused in class.', '首先且最重要的是，要記得學生需要充足睡眠，才能在課堂上專心。', 'foremost 表示最重要；只有第一點確實優先時才用。', '可替換'],
+
+    ['second', 'In addition to this, another point worth considering is that …', '除此之外，另一個值得考慮的重點是……', 'In addition to this, another point worth considering is that [完整觀點句].', 'In addition to this, another point worth considering is that the park is close enough for us to visit on foot.', '除此之外，另一個值得考慮的重點是，公園離我們夠近，步行就能到達。', 'this 必須指向前面已寫的內容。適合補上位置、費用等另一面向。', '優先背'],
+    ['second', 'Furthermore, we should also take into account the fact that …', '此外，我們也應考量……這件事', 'Furthermore, we should also take into account the fact that [完整事實句].', 'Furthermore, we should also take into account the fact that some students do not have a quiet place to study at home.', '此外，我們也應考量有些學生在家沒有安靜讀書空間這件事。', 'fact that 後要能視為事實或題目資訊；純猜測改用 another possibility is that。', '可替換'],
+    ['second', 'Besides …, another benefit is that …', '除了……之外，另一個好處是……', 'Besides [第一個好處的名詞片語], another benefit is that [完整好處句].', 'Besides better physical health, another benefit is that regular exercise gives us a chance to spend time with friends.', '除了改善身體健康之外，另一個好處是規律運動讓我們有機會與朋友相處。', 'Besides 在這裡是介系詞；此句先接第一個好處的名詞片語，兩個好處要屬於同一主題。', '可替換'],
+    ['second', 'A further reason for … is that …', '……的另一個理由是……', 'A further reason for [V-ing／名詞] is that [完整理由句].', 'A further reason for keeping a journal is that it helps us notice changes in our feelings over time.', '寫日記的另一個理由是，它能幫助我們察覺自己的感受隨時間產生的變化。', 'for 後用 keeping，不用 keep。further 表示再增加一點。', '可替換'],
+    ['second', 'Another equally important reason is that …', '另一個同樣重要的理由是……', 'Another equally important reason is that [完整理由句].', 'Another equally important reason is that the open lawn gives my family a place to spend time together.', '另一個同樣重要的理由是，開闊的草地讓我的家人有地方可以一起相處。', '要先有第一個理由；equally important 表示兩點同樣重要。', '可替換'],
+    ['second', 'The second reason why I … is that …', '我……的第二個理由是……', 'The second reason why I [動詞片語] is that [完整理由句].', 'The second reason why I support the plan is that it gives students more chances to learn from one another.', '我支持這項計畫的第二個理由是，它讓學生有更多互相學習的機會。', '與 The first reason why I … 搭配，結構清楚，適合基礎學生。', '可替換'],
+
+    ['third', 'Last but not least, we should not overlook the importance of …', '最後，我們不應忽略……的重要性', 'Last but not least, we should not overlook the importance of [名詞／V-ing].', 'Last but not least, we should not overlook the importance of giving teenagers time to rest and recharge.', '最後但同樣重要的是，我們不應忽略讓青少年休息、恢復精神的重要性。', 'of 後接名詞或 V-ing；這是最後一個理由，還沒有總結前面全部內容。', '優先背'],
+    ['third', 'Last but not least, one more advantage is that …', '最後但同樣重要的是，還有一個優點是……', 'Last but not least, one more advantage is that [完整優點句].', 'Last but not least, one more advantage is that the robot can remind me to ask an adult for help when necessary.', '最後但同樣重要的是，還有一個優點是機器人能提醒我在必要時向大人求助。', '適合第三個好處。若只有兩個理由，就在第二個理由使用最後一點的語氣。', '可替換'],
+    ['third', 'Last but not least, …', '最後但同樣重要的是……', 'Last but not least, [完整的最後一點].', 'Last but not least, walking in the park helps me stay active without spending much money.', '最後但同樣重要的是，在公園散步能讓我保持活動，也不必花很多錢。', '本表第三點統一採用此開頭。第三點必須是最後一個列舉重點；不可加 at。', '可替換'],
+
+    ['addition', 'What is more, …', '更進一步說……', 'What is more, [主詞] not only [動詞片語 A] but also [動詞片語 B].', 'What is more, the club not only teaches us new skills but also helps us build confidence.', '而且，這個社團不僅教我們新技能，也幫助我們建立自信。', 'not only 與 but also 後的結構要平行；此句使用兩個動詞片語。', '優先背'],
+    ['addition', 'Moreover, … / Furthermore, …', '而且；再者……', 'Moreover, [完整補充句], which means that [完整延伸句].', 'Moreover, the library stays open after school, which means that students have more time to use its resources.', '而且，圖書館放學後仍開放，這表示學生有更多時間使用館內資源。', 'which means that 回指前面整件事；延伸須合乎邏輯。', '優先背'],
+    ['addition', 'In addition, … / Additionally, …', '此外……', 'In addition, [主詞] can also [原形動詞片語].', 'In addition, a school garden can also give students a chance to learn how vegetables grow.', '此外，學校菜園也能讓學生有機會了解蔬菜如何生長。', '句首後加逗號，再接完整句。Additionally 可替換句首。', '可替換'],
+    ['addition', 'Apart from …, …', '除了……之外，也……', 'Apart from [名詞／V-ing], [完整補充句].', 'Apart from providing shade, trees make the park a more pleasant place to spend an afternoon.', '除了提供遮蔭之外，樹木也讓公園成為更適合度過午後的地方。', '此處表示包含在內的補充。not to mention 也可補上名詞，但語氣較強。', '可替換'],
+
+    ['example', 'A good example of this is …', '這方面一個很好的例子是……', 'A good example of this is [名詞／V-ing], which [補充說明].', 'A good example of this is our class recycling project, which encourages everyone to sort waste correctly.', '這方面一個很好的例子是班上的回收計畫，它鼓勵每個人正確分類垃圾。', 'is 後接名詞性內容；this 要有清楚的前文。', '優先背'],
+    ['example', 'For example, … / For instance, …', '例如……', 'For example, when [完整情境句], [完整具體行動句].', 'For example, when I feel stressed about exams, I can walk under the trees and listen to birds.', '例如，當我因考試感到壓力時，我可以在樹下散步、聽鳥鳴。', '先有概括想法，再接具體人物、時間、動作。', '可替換'],
+    ['example', 'Take … as an example.', '以……為例', 'Take [名詞] as an example. [完整說明句].', 'Take our school garden as an example. Students work in small groups to water plants and record their growth.', '以我們的學校菜園為例。學生分成小組，替植物澆水並記錄它們的生長。', 'Take 開頭是祈使句，不需要主詞；句點後還要說明例子。', '可替換'],
+    ['example', 'such as … / including …', '例如；包括……', '[主詞] can [動詞片語], such as [V-ing A] and [V-ing B].', 'Students can take part in outdoor activities, such as planting flowers and picking up litter.', '學生可以參加戶外活動，例如種花和撿垃圾。', 'such as 後接名詞或 V-ing，不直接接完整句。前面需先出現可列舉的大類。', '可替換'],
+
+    ['result', 'As a result, … / Consequently, …', '結果；因此……', 'As a result, [完整結果句], making it easier for [人] to [原形動詞片語].', 'We divided the work into smaller tasks. As a result, everyone knew what to do, making it easier for us to finish on time.', '我們把工作分成較小的任務。因此，每個人都知道要做什麼，這讓我們更容易準時完成。', '先交代原因；making … 補充整個結果帶來的影響。Consequently 較正式。', '優先背'],
+    ['result', 'Therefore, … / Thus, …', '因此；所以……', 'Therefore, it is important for [人] to [原形動詞片語].', 'Online information is not always accurate. Therefore, it is important for students to check the source before sharing it.', '網路資訊不一定正確。因此，學生在分享之前查核來源很重要。', '前一句要能支持這個推論。用句點或分號分開完整句，不能只靠逗號連接。', '可替換'],
+    ['result', 'This can lead to … / As a consequence, …', '這可能導致……／因此……', 'This can lead to [名詞／V-ing], especially when [完整情境句].', 'Staying up late can make it hard to concentrate. This can lead to more mistakes, especially when students take a test.', '熬夜可能讓人難以專心。這可能導致更多錯誤，尤其是學生考試時。', 'lead to 後接名詞或 V-ing；may / can 保留因果的不確定性。', '可替換'],
+    ['result', 'For this reason, …', '基於這個理由……', 'For this reason, I believe that [完整立場句].', 'The bus stop is close to my home. For this reason, I believe that taking the bus is a practical choice for me.', '公車站離我家很近。基於這個理由，我認為搭公車是適合我的實際選擇。', 'this reason 對應剛提出的單一理由；回收多個理由改用 these reasons。', '可替換'],
+
+    ['contrast', 'On the one hand, … On the other hand, …', '一方面……，另一方面……', 'On the one hand, [完整面向 A]. On the other hand, [完整面向 B].', 'On the one hand, online classes save travel time. On the other hand, some students find it harder to concentrate at home.', '一方面，線上課程省去交通時間。另一方面，有些學生在家反而較難專心。', '適合相反面向或利弊；兩個同方向的優點用 In addition 較清楚。', '優先背'],
+    ['contrast', 'However, … / Nevertheless, … / Nonetheless, …', '然而；儘管如此……', 'However, this does not mean that [完整推論句].', 'Social media helps us stay in touch. However, this does not mean that it can replace face-to-face conversations.', '社群媒體幫助我們保持聯繫。然而，這不代表它能取代面對面的談話。', 'However 較通用；nevertheless / nonetheless 強調「即使如此仍然」。注意前後語意。', '可替換'],
+    ['contrast', 'In contrast, … / By contrast, …', '相較之下……', 'In contrast, [主詞 B] [動詞片語], while [主詞 A] [動詞片語].', 'In contrast, the second park offers plenty of open space, while the first park is filled with playground equipment.', '相較之下，第二座公園提供許多開放空間，而第一座公園擺滿遊樂設施。', '兩邊比較同一面向。In contrast 承接前文；while 連接句內兩個子句。', '可替換'],
+    ['contrast', 'whereas / while / unlike', '而；與……不同', '[完整句 A], whereas [完整句 B].', 'Picture A shows a crowded shopping street, whereas Picture B shows a quiet neighborhood market.', '圖 A 呈現擁擠的商店街，而圖 B 呈現安靜的社區市場。', 'whereas / while 後接子句；unlike 後接名詞。On the contrary 用於否定前述看法，不是普通對比。', '可替換'],
+
+    ['concession', 'Although / Even though …, …', '雖然……，仍然……', 'Although [完整讓步句], I still believe that [完整立場句].', 'Although a busy playground may offer more activities, I still believe that a quiet park would suit my needs better.', '雖然熱鬧的遊樂場可能提供更多活動，我仍認為安靜的公園更符合我的需要。', '不用 Although …, but …；even though 的讓步語氣更強。', '優先背'],
+    ['concession', 'Admittedly, …, but …', '不可否認……，但是……', 'Admittedly, [完整讓步句], but this does not mean that [完整判斷句].', 'Admittedly, group projects take time, but this does not mean that students should always work alone.', '不可否認，小組報告很花時間，但這不代表學生應該總是獨自完成工作。', 'Admittedly 是副詞，不是 although，所以後面可以用 but 連接兩句。', '可替換'],
+    ['concession', 'Despite … / In spite of …', '儘管……', 'Despite [名詞／V-ing], [完整主句].', 'Despite feeling nervous, I decided to share my idea with the rest of the class.', '儘管感到緊張，我仍決定和全班分享我的想法。', 'despite 後沒有 of；in spite of 要有 of。V-ing 的動作者要和主句主詞一致。', '可替換'],
+    ['concession', 'Even if …, …', '即使……，也……', 'Even if [完整假設句], [完整主句].', 'Even if the weather is bad tomorrow, we can still hold the event in the school hall.', '即使明天天氣不好，我們仍可以在學校禮堂舉辦活動。', 'even if 是假設，不代表已發生；even though 通常承認已知情況。', '可替換'],
+
+    ['opinion', 'As far as I am concerned, …', '就我而言……', 'As far as I am concerned, what matters most is [名詞／V-ing].', 'As far as I am concerned, what matters most is having a safe place to relax after school.', '就我而言，最重要的是放學後有一個安全的地方可以放鬆。', '個人立場；不要和表示知識範圍的 As far as I know 混用。', '優先背'],
+    ['opinion', 'From my perspective, … / In my opinion, …', '依我看；在我看來……', 'From my perspective, [主詞] would be a better choice because [完整理由句].', 'From my perspective, a natural park would be a better choice because it offers both quiet paths and space for family activities.', '依我看，自然公園是更好的選擇，因為它兼有安靜的步道和家庭活動空間。', '選一個立場開頭即可；不用 In my opinion, I think 連續表達相同意思。', '可替換'],
+    ['opinion', 'I am convinced that …', '我深信……', 'I am convinced that [完整立場句], especially when [完整情境句].', 'I am convinced that teamwork can improve learning, especially when every member has a clear role.', '我深信團隊合作能改善學習，尤其是每位成員都有明確分工時。', '語氣強於 I think；需要前後理由支持，不是任何主題都要用強烈語氣。', '可替換'],
+    ['opinion', 'I would prefer … because …', '我會比較喜歡……，因為……', 'I would prefer [名詞／to + 原形動詞] because [完整理由句].', 'I would prefer to study in the library because I can focus better without the noise at home.', '我會比較喜歡在圖書館讀書，因為沒有家裡的噪音，我能更專心。', '偏好 A 勝過 B 可寫 prefer A to B；注意 A、B 詞性平行。', '可替換'],
+
+    ['clarification', 'To be more specific, … / Specifically, …', '更具體地說……', 'To be more specific, [主詞] can [原形動詞片語] by [V-ing].', 'To be more specific, students can reduce waste by bringing reusable bottles to school.', '更具體地說，學生可以自備可重複使用的水瓶到學校，減少垃圾。', '前面先談較大的概念，例如保護環境；這句才說實際做法。', '優先背'],
+    ['clarification', 'In other words, … / That is to say, …', '換句話說……', 'In other words, [同一意思的完整改述句].', 'The plan encourages students to learn at their own pace. In other words, they can spend more time on the topics they find difficult.', '這項計畫鼓勵學生依自己的步調學習。換句話說，他們可以在較難的主題上花更多時間。', '是解釋同一個意思，不能突然加不相關的新理由。', '可替換'],
+    ['clarification', 'This means that …', '這表示……', 'This means that [完整解釋句], rather than [平行的對照成分].', 'Everyone has a role in the project. This means that we share the work, rather than leave it all to one person.', '每個人在計畫中都有角色。這表示我們分擔工作，而不把所有事情留給一個人。', '例句 share 與 leave 平行；this 需有明確前文。', '可替換'],
+    ['clarification', 'In this sense, …', '從這個角度來看……', 'In this sense, [主詞] is more than just [名詞]; it is also [名詞].', 'In this sense, the library is more than just a place to borrow books; it is also a space for the community to learn together.', '從這個角度來看，圖書館不只是借書的地方，也是社區一起學習的空間。', '要先說明相關特點，再導出這個理解。分號兩邊各是完整句。', '可替換'],
+
+    ['emphasis', 'It is worth noting that …', '值得注意的是……', 'It is worth noting that [完整細節句].', 'It is worth noting that not every student has a smartphone with reliable internet access.', '值得注意的是，並非每位學生都有能穩定上網的智慧型手機。', '適合提醒限制或被忽略的細節。worth noting，不用 worth to note。', '優先背'],
+    ['emphasis', 'More importantly, … / Above all, …', '更重要的是；最重要的是……', 'More importantly, [完整重點句], which can [原形動詞片語].', 'More importantly, the activity gives shy students a chance to speak, which can help them become more confident.', '更重要的是，這項活動讓害羞的學生有機會發言，這能幫助他們更有自信。', 'More importantly 表示比前點更重要；Above all 表示最重要，不能只當此外。', '可替換'],
+    ['emphasis', 'In particular, … / Particularly, …', '尤其；特別是……', 'In particular, [特定對象] can benefit from [名詞／V-ing].', 'In particular, students who feel nervous in large groups can benefit from discussing ideas with a partner first.', '尤其是，在大團體中容易緊張的學生，可以先與一位同伴討論想法，從中受益。', '由大範圍縮小到特定群體。句首通常優先用 In particular 較自然。', '可替換'],
+    ['emphasis', 'In fact, … / Indeed, …', '事實上；的確……', 'In fact, [完整澄清句], even when [完整情境句].', 'Small acts of kindness can matter. In fact, a friendly greeting can make someone feel welcome, even when it lasts only a few seconds.', '小小的善意也有意義。事實上，即使只持續幾秒鐘，親切的招呼也能讓人感到受歡迎。', 'In fact 可澄清或加強；Indeed 可確認前述說法。不能無根據地把猜測當事實。', '可替換'],
+
+    ['bridge', 'While Picture A shows …, Picture B presents …', '圖 A 呈現……，而圖 B 呈現……', 'While Picture A shows [名詞片語 A], Picture B presents [名詞片語 B].', 'While Picture A shows children playing on slides, Picture B presents families resting under tall trees.', '圖 A 呈現孩子們玩溜滑梯，而圖 B 呈現家人在高樹下休息。', 'show / present 後接名詞性內容。while 在此是對比，不是時間。', '優先背'],
+    ['bridge', 'When it comes to …, …', '談到……', 'When it comes to [名詞／V-ing], I would prefer [名詞／to + 原形動詞].', 'When it comes to choosing a place to relax, I would prefer a park with plenty of trees and open space.', '談到選擇放鬆的地點，我會比較喜歡有許多樹木與開放空間的公園。', 'to 是介系詞，後接 choosing，不用 choose。可銜接個人偏好段。', '優先背'],
+    ['bridge', 'As shown in the picture, …', '如圖片所示……', 'As shown in the picture, [完整可觀察的描述句].', 'As shown in the picture, several students are working together to clean up the beach.', '如圖片所示，幾位學生正一起清理海灘。', '只描述看得到的事。情緒、關係或動機不確定時用 seem / may。', '可替換'],
+    ['bridge', 'These differences lead me to think about …', '這些差異讓我想到……', 'These differences lead me to think about [名詞／間接問句].', 'These differences lead me to think about what I really need in an ideal park.', '這些差異讓我思考，理想公園裡究竟需要什麼。', '先描述差異；間接問句採直述句語序，例如 what I need，不是 what do I need。', '可替換'],
+
+    ['conclusion', 'For all the reasons mentioned above, I believe that …', '基於上述所有理由，我認為……', 'For all the reasons mentioned above, I believe that [完整結論句].', 'For all the reasons mentioned above, I believe that schools should make time for regular outdoor activities.', '基於上述所有理由，我認為學校應安排定期的戶外活動。', '適合前文已有多個理由；篇幅短時 For these reasons 更精簡。', '優先背'],
+    ['conclusion', 'Taking everything into consideration, I believe that …', '把各方面都納入考量後，我認為……', 'Taking everything into consideration, I believe that [重申立場的完整句].', 'Taking everything into consideration, I believe that a natural park would best meet my needs for rest, family time, and exercise.', '把各方面都納入考量後，我認為自然公園最能滿足我休息、家庭相處與運動的需要。', '前文需已討論各個面向；開頭 taking 的執行者是主句的 I。', '可替換'],
+    ['conclusion', 'In conclusion, … is not only … but also …', '總結來說，……不只是……，也是……', 'In conclusion, [單數主詞] is not only [名詞 A] but also [名詞 B].', 'In conclusion, the park is not only a place to exercise but also a space where families can spend time together.', '總結來說，公園不只是運動的地方，也是家人可以一起相處的空間。', 'A、B 必須平行，且兩個面向前文都已提過；不可在結尾才新增主要理由。', '可替換'],
+    ['conclusion', 'With these points in mind, …', '考量到這些重點……', 'With these points in mind, we should [原形動詞片語] so that [完整目的句].', 'With these points in mind, we should use social media responsibly so that it supports our relationships instead of replacing them.', '考量到這些重點，我們應負責任地使用社群媒體，讓它協助維繫人際關係，而非取代人際關係。', '適合前文已討論行動方向的議論文；建議要回應題目。', '可替換'],
+    ['conclusion', 'All things considered, …', '綜合考量之後……', 'All things considered, [主詞] would be the most suitable choice for [人／用途].', 'All things considered, a small community library would be the most suitable choice for our neighborhood.', '綜合考量之後，小型社區圖書館會是最適合我們社區的選擇。', '這裡 suitable 指符合需要；前文要有比較或理由支持 most。', '可替換'],
+    ['conclusion', 'To sum up, … / In summary, … / In short, …', '總結而言；簡言之……', 'To sum up, [主詞] can [動詞片語 A] and [動詞片語 B], making it [補語].', 'To sum up, a school club can help us learn new skills and build friendships, making it a valuable part of school life.', '總結而言，學校社團能幫我們學新技能、建立友誼，成為校園生活中有價值的一部分。', '摘要前文兩點即可。In short 著重簡短概括，不一定只能放全文最後。', '可替換'],
+    ['conclusion', 'All in all, … / On the whole, …', '整體而言……', 'All in all, although [已談過的缺點句], [整體評價句].', 'All in all, although group work can be challenging, it offers valuable chances to practice communication and cooperation.', '整體而言，雖然小組合作可能有挑戰，它仍提供練習溝通與合作的寶貴機會。', '以整體評價收尾；although 後不用再接 but。On the whole 也可表示整體評估。', '可替換'],
+  ]
+};
+</script>
+  <script>
+(() => {
+  'use strict';
+  const root = document.getElementById('transitionReference');
+  const data = window.transitionReference;
+  if (!root || !data) return;
+  const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+  const format = value => escape(value).replace(/\[([^\]]+)\]/g, '<span class="ref-slot" lang="zh-Hant">[$1]</span>');
+  const wordCount = value => (value.replace(/\[[^\]]+\]/g, '').match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) || []).length;
+  const sourceWei = 'https://cnash-english.weebly.com/101397593116834349327692410723531203162516320874.html';
+  const sourceZhao = 'https://rulin23613266.pixnet.net/blog/posts/17295026756';
+  const sourceEagle = 'https://broadeagleenglish.com/gsat-english-essay-writing/';
+  const sourceCEEC = 'https://www.ceec.edu.tw/xcepaper/cont?sid=0Q111569514236767793&xsmsid=0J066588036013658199';
+  const priorityCount = data.rows.filter(row => row[7] === '優先背').length;
+  const sequence = [['第一點', 'first'], ['第二點', 'second'], ['第三點', 'third'], ['結論', 'conclusion']]
+    .map(([label, category]) => [label, data.rows.find(row => row[0] === category && row[7] === '優先背')]);
+  const labels = ['轉承語與意思', '可直接套用的句型', '完整例句與翻譯', '接法與使用提醒'];
+  root.classList.add('reference-library');
+  root.innerHTML = `
+    <div class="ref-intro">
+      <p class="ref-eyebrow">TRANSITIONS & SENTENCE FRAMES</p>
+      <h3>高中英文作文｜${data.categories.length} 類、${data.rows.length} 組詳細查閱表</h3>
+      <p>從第一個理由寫到最後的結論。每一組都有中文意思、可替換空格、完整例句與使用提醒，涵蓋列點、補充、舉例、對比、立場與結論等常用寫作用途。</p>
+      <p class="ref-note">每類精選 1–2 組，全表共 ${priorityCount} 組優先背。以自然好套用、能延伸內容的高中長句為優先；長句骨架與例句為本教材編寫，並非老師票選排名。</p>
+      <p class="ref-priority-note"><strong>背誦順序：</strong>先背每類上方的<span class="ref-key-primary">綠色「優先背」</span>，下方<span class="ref-key-alternative">橘色「可替換」</span>需要時再查。照完整句型替換灰底 [空格]；同一列的同義開頭選一種，不必全部背。</p>
+    </div>
+    <div class="ref-sequence" aria-label="先背這組：三點與結論">
+      ${sequence.map(([label, row]) => `<article><strong>${label}</strong><p class="ref-en" lang="en">${format(row[3])}</p><p class="ref-zh">${escape(row[2])}</p><span class="ref-fixed-count">固定英文 ${wordCount(row[3])} 字，不含你填入的內容</span></article>`).join('')}
+    </div>
+    <p class="ref-note">第三點依本教材安排採用 <span lang="en">Last but not least</span>：表示「最後但仍重要的一點」，不代表全文結論。只有兩個理由時，不必硬湊第三點；若後面還有第四點，就不要在第三點使用 Last。</p>
+    <details class="ref-sample"><summary>看完整示範：三個理由如何接成一段？</summary><div class="ref-detail-body">
+      <p class="ref-note">示範「理想公園」的觀點段，並非整篇作文。固定骨架之外，每個理由都補一項具體行動或細節。</p>
+      <p class="ref-en" lang="en">My ideal park would have tall trees, an open lawn, and safe walking paths. <strong>To begin with, one important reason is that</strong> a quiet park gives me a place to relax. After school, I could walk under the trees and take a break from homework. <strong>In addition to this, another point worth considering is that</strong> the lawn allows my family to spend time together. We could have a picnic there and talk about our week. <strong>Last but not least, we should not overlook the importance of</strong> staying active. The walking paths would give me a place to exercise without paying for a gym. <strong>For all the reasons mentioned above, I believe that</strong> such a park would meet my needs for rest, family time, and exercise.</p>
+      <p class="ref-zh">我的理想公園會有高樹、開闊的草地和安全步道。首先，一個重要理由是安靜的公園能讓我放鬆。放學後，我能在樹下散步，暫時放下功課。除此之外，另一個值得考慮的重點是，草地讓家人有機會相處。我們可以在那裡野餐，聊聊這一週的生活。最後但同樣重要的是，我們不應忽略保持活動的重要性。步道能讓我有地方運動，不必支付健身房費用。基於上述所有理由，我認為這樣的公園能滿足我休息、家庭相處與運動的需要。</p>
+    </div></details>
+    <div class="ref-controls">
+      <label class="ref-search-label" for="transitionSearch">查英文、中文用途或文法提醒</label>
+      <div class="ref-search-row"><input id="transitionSearch" type="search" placeholder="例如：第二點、結論、because、完整理由句" autocomplete="off"><button type="button" class="ref-button" id="transitionReset">清除篩選</button><button type="button" class="ref-button" id="transitionPrint">列印目前結果</button></div>
+      <div class="ref-filters" aria-label="快速篩選">
+        <button type="button" class="ref-button" data-ref-filter="all" aria-pressed="true">全部句型</button>
+        <button type="button" class="ref-button" data-ref-filter="priority" aria-pressed="false">優先背（${priorityCount} 組）</button>
+        <button type="button" class="ref-button" data-ref-filter="sequence" aria-pressed="false">第一、第二、第三點</button>
+        <button type="button" class="ref-button" data-ref-filter="conclusion" aria-pressed="false">結論</button>
+      </div>
+      <details class="ref-category-picker"><summary>依 ${data.categories.length} 種用途篩選</summary><div class="ref-detail-body ref-filters">${data.categories.map(([id, title]) => `<button type="button" class="ref-button" data-ref-filter="${id}" aria-pressed="false">${escape(title)}</button>`).join('')}</div></details>
+      <div class="ref-actions"><p id="transitionResults" class="ref-results" role="status" aria-live="polite"></p><div><button type="button" class="ref-button" id="transitionExpand">展開目前結果</button><button type="button" class="ref-button" id="transitionCollapse">收合目前結果</button></div></div>
+      <p class="ref-copy-status" id="transitionCopyStatus" role="status" aria-live="polite"></p>
+    </div>
+    <div id="transitionGroups">${data.categories.map(([id, title, purpose], categoryIndex) => {
+      const rows = data.rows.map((row, index) => ({ row, index })).filter(item => item.row[0] === id);
+      return `<details class="ref-category" data-ref-category="${id}" ${categoryIndex === 0 ? 'open' : ''}><summary>${String(categoryIndex + 1).padStart(2, '0')}. ${escape(title)}<span class="ref-count">${rows.length} 組</span></summary><p class="ref-purpose">${escape(purpose)}</p><table class="ref-table" aria-label="${escape(title)}詳細句型表"><thead><tr>${labels.map(label => `<th scope="col">${label}</th>`).join('')}</tr></thead><tbody>${rows.map(({row, index}) => `<tr data-ref-row="${index}" data-ref-priority="${row[7] === '優先背' ? 'primary' : 'alternative'}">
+        <td data-label="${labels[0]}"><span class="ref-row-tag ${row[7] === '優先背' ? 'primary' : 'alternative'}">${row[7]}</span><div class="ref-en" lang="en">${escape(row[1])}</div><span class="ref-zh">${escape(row[2])}</span></td>
+        <td data-label="${labels[1]}"><div class="ref-en" lang="en">${format(row[3])}</div><button type="button" class="ref-button ref-copy" data-ref-copy="${index}" aria-label="複製句型：${escape(row[1])}">複製句型</button></td>
+        <td data-label="${labels[2]}"><div class="ref-en" lang="en">${escape(row[4])}</div><span class="ref-zh">${escape(row[5])}</span></td>
+        <td data-label="${labels[3]}">${escape(row[6])}</td></tr>`).join('')}</tbody></table></details>`;
+    }).join('')}</div>
+    <p id="transitionEmpty" class="ref-empty" hidden>找不到符合的句型。試試較短的關鍵字，或按「清除篩選」回到全部內容。</p>
+    <details class="ref-grammar"><summary>使用前必看：8 個最常出錯的地方</summary><div class="ref-detail-body"><ul>
+      <li><strong>完整句與名詞不同：</strong><span lang="en">because / although / so that</span> 後接主詞與動詞；<span lang="en">because of / despite / such as</span> 後通常接名詞或 V-ing。</li>
+      <li><strong>不要只用逗號黏兩句：</strong><span lang="en">I was tired. However, I kept working.</span> 或 <span lang="en">I was tired; however, I kept working.</span> 都可以。</li>
+      <li><strong>中文雙連詞不直接照搬：</strong>選 <span lang="en">Because A, B.</span> 或 <span lang="en">A, so B.</span>；選 <span lang="en">Although A, B.</span> 或 <span lang="en">A, but B.</span></li>
+      <li><strong>首點不是起初：</strong><span lang="en">First / To begin with</span> 可列理由；<span lang="en">At first</span> 表示起初的情況，常與後來的變化相對。<a href="https://dictionary.cambridge.org/grammar/british-grammar/first-firstly-or-at-first" target="_blank" rel="noopener noreferrer">Cambridge 用法說明</a>。</li>
+      <li><strong>最後一點與結論分開：</strong><span lang="en">Last but not least</span> 帶出最後一項理由；<span lang="en">In conclusion</span> 回收全部重點；<span lang="en">Ultimately</span> 多談最終結果或判斷，不直接當 Third 的替代。</li>
+      <li><strong>另一方面不等於正好相反：</strong><span lang="en">On the other hand</span> 談另一面向；<span lang="en">On the contrary</span> 反駁前述看法。例如 <span lang="en">The task was not a waste of time. On the contrary, it taught us a useful skill.</span></li>
+      <li><strong>長句主詞要對得上：</strong><span lang="en">Taking everything into consideration, I believe …</span> 的思考者是 I。<span lang="en">In order to relax, I …</span> 的放鬆者也是 I。</li>
+      <li><strong>不堆同義開頭：</strong>一個位置挑一種句型。強調語如 <span lang="en">foremost / above all</span> 要真的有重要性排序；正式詞和較長句型都不保證比較高分。</li>
+    </ul></div></details>
+    <details class="ref-evidence"><summary>老師與教學資料怎麼建議？來源與整理方式</summary><div class="ref-detail-body">
+      <p class="ref-note">查閱日期：2026 年 11 月 14 日。以下是公開教材與文章的重點整理，不代表所有高中英文老師的一致排名；本表的長句及例句均另外編寫。</p>
+      <ul>
+        <li><strong>暨大附中英文教學網・魏秀蘭老師寫作手冊：</strong>按順序、例子、結果與結論等功能列出工具，例如 <span lang="en">To begin with / Last but not least / For instance / As a result / In conclusion</span>。本表採用按功能查找的方式，並重新核對易混用項目的分類。<a href="${sourceWei}" target="_blank" rel="noopener noreferrer">閱讀原手冊</a>。</li>
+        <li><strong>台北儒林・趙捷老師：</strong>提醒熟悉 <span lang="en">therefore / for example / however / in fact</span> 的語意關係；作文先寫清楚主題，細節要支持主題，結尾回扣。也提醒不為拉長而寫贅句。<a href="${sourceZhao}" target="_blank" rel="noopener noreferrer">閱讀考前叮嚀</a>。</li>
+        <li><strong>寬鷹英文・學測寫作教學：</strong>補充理由可用 <span lang="en">In addition / Moreover</span>；結尾可用 <span lang="en">In conclusion</span>，或以 <span lang="en">From this experience, I learned that …</span> 進入反思。這是教學網站建議，未當成具名老師票選。<a href="${sourceEagle}" target="_blank" rel="noopener noreferrer">閱讀學測作文教學</a>。</li>
+        <li><strong>大考中心・115 學測英文評分原則：</strong>評量會看內容、組織、文法句構和字彙拼字；轉承的效果在於讓內容連貫，並沒有「長轉折句保證加分」的標準。<a href="${sourceCEEC}" target="_blank" rel="noopener noreferrer">閱讀官方評分說明</a>。</li>
+        <li><strong>Cambridge Grammar：</strong>本表另參照第一點與起初的區別，並確認慣用語寫作 <span lang="en">last but not least</span>，前面不加 at。<a href="https://dictionary.cambridge.org/grammar/british-grammar/prepositions-last-but-not-least" target="_blank" rel="noopener noreferrer">閱讀用法提醒</a>。</li>
+      </ul>
+      <p><strong>建議背誦路線：</strong>先熟悉上方四句主架構，再各選一組舉例、轉折與結果句；能正確填完空格之後，再增加同義替換。</p>
+    </div></details>`;
+
+  const search = document.getElementById('transitionSearch');
+  const groups = [...root.querySelectorAll('.ref-category')];
+  const rowElements = [...root.querySelectorAll('[data-ref-row]')];
+  const categoryNames = new Map(data.categories.map(([id, title]) => [id, title]));
+  const searchTexts = data.rows.map(row => `${categoryNames.get(row[0])} ${row.join(' ')}`.toLocaleLowerCase());
+  let activeFilter = 'all';
+  function applyFilter(expand = true) {
+    const words = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    let count = 0;
+    rowElements.forEach((element, index) => {
+      const row = data.rows[index];
+      const matchesFilter = activeFilter === 'all' ||
+        (activeFilter === 'priority' && row[7] === '優先背') ||
+        (activeFilter === 'sequence' && ['first', 'second', 'third'].includes(row[0])) ||
+        (activeFilter === 'conclusion' && row[0] === 'conclusion') ||
+        (activeFilter.startsWith('category:') && row[0] === activeFilter.slice(9));
+      element.hidden = !(matchesFilter && words.every(word => searchTexts[index].includes(word)));
+      if (!element.hidden) count++;
+    });
+    let categoryCount = 0;
+    groups.forEach(group => {
+      const visible = [...group.querySelectorAll('[data-ref-row]')].filter(row => !row.hidden).length;
+      group.hidden = visible === 0;
+      if (visible) categoryCount++;
+      group.querySelector('.ref-count').textContent = `${visible} 組`;
+      if (expand && visible) group.open = true;
+    });
+    document.getElementById('transitionResults').textContent = `顯示 ${categoryCount} 類・${count} / ${data.rows.length} 組句型`;
+    document.getElementById('transitionEmpty').hidden = count !== 0;
+    root.querySelectorAll('[data-ref-filter]').forEach(button => {
+      const filter = button.closest('.ref-category-picker') ? `category:${button.dataset.refFilter}` : button.dataset.refFilter;
+      button.setAttribute('aria-pressed', String(filter === activeFilter));
+    });
+  }
+  search.addEventListener('input', () => applyFilter());
+  root.querySelectorAll('[data-ref-filter]').forEach(button => button.addEventListener('click', () => {
+    activeFilter = button.closest('.ref-category-picker') ? `category:${button.dataset.refFilter}` : button.dataset.refFilter;
+    applyFilter();
+  }));
+  document.getElementById('transitionReset').addEventListener('click', () => {
+    activeFilter = 'all'; search.value = ''; applyFilter(false); search.focus();
+  });
+  document.getElementById('transitionExpand').addEventListener('click', () => groups.filter(group => !group.hidden).forEach(group => { group.open = true; }));
+  document.getElementById('transitionCollapse').addEventListener('click', () => groups.filter(group => !group.hidden).forEach(group => { group.open = false; }));
+  root.querySelectorAll('[data-ref-copy]').forEach(button => button.addEventListener('click', async () => {
+    const value = data.rows[Number(button.dataset.refCopy)][3];
+    const status = document.getElementById('transitionCopyStatus');
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(value);
+      status.textContent = '句型已複製，記得替換方括號中的內容。';
+    } catch (_) {
+      const range = document.createRange();
+      range.selectNodeContents(button.previousElementSibling);
+      const selection = window.getSelection();
+      selection.removeAllRanges(); selection.addRange(range);
+      status.textContent = '已選取句型，請按 Ctrl + C，或使用裝置的複製功能。';
+    }
+  }));
+  let printState;
+  window.addEventListener('beforeprint', () => {
+    if (printState) return;
+    printState = [...root.querySelectorAll('details')].map(element => [element, element.open]);
+    printState.forEach(([element]) => { if (!element.hidden) element.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    if (printState) printState.forEach(([element, open]) => { element.open = open; });
+    printState = null;
+  });
+  document.getElementById('transitionPrint').addEventListener('click', () => window.print());
+  applyFilter(false);
+})();
+</script>
+</body>
+</html>

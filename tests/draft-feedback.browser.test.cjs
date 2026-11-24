@@ -17,6 +17,7 @@ const { chromium } = require('playwright');
     page.on('dialog', dialog => dialog.accept());
     const url = pathToFileURL(path.resolve('index.html')).href;
     await page.goto(url);
+    await page.locator('[role="tab"][aria-controls="workshop"]').click();
     const legacy = 'Picture A shows many children. [圖 A 的動作：請確認完整句，原素材：play on colorful equipment] The park feels lively and exciting.';
     const repaired = 'Picture A shows many children. Children play on colorful equipment. The park feels lively and exciting.';
     const setState = async overrides => {

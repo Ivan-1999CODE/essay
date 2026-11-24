@@ -71,6 +71,7 @@ check('park scenery and a full action clause remain separate sentences', () => {
   reset();
   field('b1').value = 'tall trees and a wide green field';
   field('b2').value = 'families enjoy a quiet picnic.';
+  field('b3').value = 'quiet and peaceful';
   subject.buildParagraphOne();
   assert.equal(field('p1s3').value, 'By contrast, Picture B shows tall trees and a wide green field. Families enjoy a quiet picnic. The park feels quiet and peaceful.');
   assert.doesNotMatch(combined(paragraphOne), /\bwho\b/);

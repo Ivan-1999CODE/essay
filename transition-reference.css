@@ -1,0 +1,107 @@
+.reference-library { --ref-line: #d6ded7; color: var(--ink, #1d2a26); margin: 24px 0 38px; }
+.reference-library [hidden] { display: none !important; }
+.reference-library * { box-sizing: border-box; }
+.reference-library a { color: var(--green-dark, #164a3b); text-underline-offset: 3px; }
+.reference-library :is(button, input, summary, a):focus-visible { outline: 3px solid #256d58; outline-offset: 3px; }
+.reference-library button { font: inherit; cursor: pointer; }
+.reference-library p { margin: 6px 0 12px; }
+.reference-library h3 { margin: 0 0 12px; font-size: 1.25rem; }
+.ref-intro { padding: 23px; border: 1px solid var(--ref-line); border-radius: 18px; background: #eef5ef; }
+.ref-intro .ref-eyebrow { color: #256d58; font-size: .76rem; letter-spacing: .13em; font-weight: 800; }
+.ref-note { color: #53645b; font-size: .88rem; }
+.ref-priority-note { padding: 12px 15px; border-left: 4px solid #43835b; background: #f8fbf8; border-radius: 0 10px 10px 0; }
+.ref-key-primary { color: #245b39; font-weight: 750; }
+.ref-key-alternative { color: #8b461c; font-weight: 750; }
+.ref-sequence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; margin: 18px 0; }
+.ref-sequence article { min-width: 0; padding: 18px; border: 1px solid #bed4bf; background: #f0f7f1; border-radius: 14px; }
+.ref-sequence strong { display: block; color: #164a3b; }
+.ref-sequence .ref-en { font-size: 1.05rem; margin: 8px 0; }
+.ref-en { font-family: Georgia, 'Times New Roman', serif; line-height: 1.7; overflow-wrap: anywhere; }
+.ref-slot { color: #46514b; background: #e9eeeb; border-radius: 3px; padding: 1px 3px; font-family: 'Microsoft JhengHei', sans-serif; font-size: .85em; }
+.ref-zh { display: block; color: #56685d; font-family: 'Microsoft JhengHei', system-ui, sans-serif; font-size: .83rem; line-height: 1.7; margin-top: 7px; }
+.ref-fixed-count { font-size: .78rem; color: #627268; }
+.ref-sample, .ref-evidence, .ref-grammar, .ref-category-picker { border: 1px solid var(--ref-line); background: #fffdf8; border-radius: 14px; margin: 14px 0; }
+.reference-library summary { padding: 15px 18px; cursor: pointer; font-weight: 750; }
+.reference-library summary:hover { background: #edf4ef; border-radius: 13px; }
+.ref-detail-body { padding: 0 18px 18px; }
+.ref-sample .ref-detail-body { max-width: 850px; }
+.ref-sample .ref-en { line-height: 1.9; }
+.ref-controls { padding: 20px 0 14px; }
+.ref-search-label { display: block; font-weight: 800; margin-bottom: 7px; }
+.ref-search-row { display: flex; gap: 10px; align-items: stretch; }
+.ref-search-row input { min-width: 0; flex: 1; width: auto; border: 1px solid #9dae9e; border-radius: 10px; padding: 12px 14px; font: inherit; color: #1d2a26; background: #fffdf8; }
+.ref-button { display: inline-flex; align-items: center; justify-content: center; padding: 9px 13px; border: 1px solid #a6bcad; border-radius: 10px; color: #164a3b; background: #fffdf8; font-size: .85rem !important; line-height: 1.5; white-space: normal; }
+.ref-button:hover { background: #dcece5; }
+.ref-button[aria-pressed='true'] { color: #fff; background: #164a3b; border-color: #164a3b; }
+.ref-filters, .ref-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ref-actions { justify-content: space-between; align-items: center; }
+.ref-actions > div { display: flex; gap: 8px; flex-wrap: wrap; }
+.ref-results { margin: 0 !important; font-size: .88rem; color: #526457; }
+.ref-category { margin: 12px 0; border: 1px solid var(--ref-line); border-radius: 14px; overflow: hidden; background: #fffdf8; scroll-margin-top: 24px; }
+.ref-category > summary { color: #164a3b; background: #edf4ef; }
+.ref-category > summary .ref-count { margin-left: 8px; color: #526457; font-size: .8rem; font-weight: 500; }
+.ref-category .ref-purpose { margin: 0; padding: 10px 18px; color: #53645b; font-size: .86rem; }
+.ref-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .86rem; }
+.ref-table th, .ref-table td { text-align: left; vertical-align: top; padding: 14px; border-top: 1px solid var(--ref-line); overflow-wrap: anywhere; }
+.ref-table thead th { background: #f3f1e8; color: #415648; font-size: .8rem; }
+.ref-table th:nth-child(1) { width: 20%; }
+.ref-table th:nth-child(2) { width: 25%; }
+.ref-table th:nth-child(3) { width: 33%; }
+.ref-table th:nth-child(4) { width: 22%; }
+.ref-table tbody tr[data-ref-priority='primary'] { --ref-row-ink: #245b39; background: #f0f7f1; }
+.ref-table tbody tr[data-ref-priority='alternative'] { --ref-row-ink: #8b461c; background: #fff7ee; }
+.ref-table td:first-child { border-left: 3px solid var(--ref-row-ink); }
+.ref-table td:nth-child(-n+2) > .ref-en { color: var(--ref-row-ink); }
+.ref-table td .ref-en { font-size: 1rem; }
+.ref-row-tag { display: inline-block; border: 1px solid #bed4bf; border-radius: 5px; background: #e6f0e4; color: #31563a; padding: 2px 6px; font-size: .72rem; margin-bottom: 7px; }
+.ref-row-tag.alternative { background: #fff0df; border-color: #e7c396; color: #7b4423; }
+.ref-copy { display: block; margin-top: 12px; font-size: .76rem !important; padding: 5px 10px; }
+.ref-empty { padding: 24px; background: #fff4e5; border-radius: 12px; }
+.ref-evidence ul, .ref-grammar ul { padding-left: 22px; }
+.ref-evidence li, .ref-grammar li { margin: 12px 0; }
+.ref-copy-status { min-height: 1.7em; font-size: .85rem; color: #256d58; }
+.reference-legacy { margin-top: 30px; }
+.reference-legacy > summary { padding: 15px; margin-bottom: 14px; color: #164a3b; font-weight: 800; cursor: pointer; border: 1px solid #d6ded7; border-radius: 12px; }
+.reference-page { margin: 0; background: #f5f0e6; color: #1d2a26; font-family: 'Microsoft JhengHei', system-ui, sans-serif; line-height: 1.7; }
+.reference-page-main { max-width: 1200px; padding: 35px 20px; margin: auto; }
+.reference-page h1 { color: #164a3b; font-size: clamp(1.65rem, 4vw, 2.4rem); margin: 12px 0; }
+.ref-back { color: #164a3b; text-underline-offset: 4px; }
+@media (max-width: 720px) {
+  .ref-sequence { grid-template-columns: 1fr; }
+  .ref-intro { padding: 17px; }
+  .ref-table, .ref-table tbody, .ref-table tr, .ref-table td { display: block; width: 100%; }
+  .ref-table thead { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+  .ref-table td { border-top: 0; padding: 7px 16px; }
+  .ref-table tr { padding: 12px 0; border-top: 1px solid var(--ref-line); }
+  .ref-table td::before { content: attr(data-label); display: block; font-family: 'Microsoft JhengHei', sans-serif; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: #657669; margin-bottom: 4px; }
+  .ref-search-row { flex-wrap: wrap; }
+  .ref-search-row input { flex-basis: 100%; }
+  .ref-search-row .ref-button { flex: 1; }
+  .ref-actions { align-items: flex-start; gap: 10px; }
+  .reference-page-main { padding: 20px 10px; }
+}
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  body { background: white !important; }
+  body > :not(main):not(.reference-page-main), body:not(.reference-page) main > :not(#transitions), #transitions > .shell > :not(.reference-library) { display: none !important; }
+  .reference-page-main > :not(.reference-library) { display: none !important; }
+  #transitions, #transitions .shell, .reference-page-main, .reference-library { padding: 0; margin: 0; width: 100%; max-width: none; background: white; }
+  .ref-controls, .ref-copy, .ref-copy-status, .ref-category-picker, .ref-actions, .ref-empty { display: none !important; }
+  .reference-library { font-size: 10pt; }
+  .ref-intro { border: 0; padding: 0; }
+  .ref-category { border: 0; border-radius: 0; overflow: visible; }
+  .ref-category > summary { break-after: avoid; padding: 8px 0; }
+  .ref-table { display: table; table-layout: fixed; font-size: 9pt; }
+  .ref-table thead { position: static; display: table-header-group; width: auto; height: auto; clip-path: none; }
+  .ref-table tbody { display: table-row-group; }
+  .ref-table tr { display: table-row; break-inside: avoid; }
+  .ref-table td { display: table-cell; width: auto; padding: 9px; border-top: 1px solid #ccc; }
+  .ref-table td::before { display: none; }
+  .ref-table td .ref-en { font-size: 10pt; }
+  .ref-zh { font-size: 9pt; }
+  .ref-sequence { grid-template-columns: 1fr 1fr; }
+  .ref-sequence article { break-inside: avoid; }
+  .ref-category > summary::marker, .ref-sample > summary::marker { content: ''; }
+  .ref-evidence, .ref-grammar { break-inside: auto; }
+  a { text-decoration: none; }
+}

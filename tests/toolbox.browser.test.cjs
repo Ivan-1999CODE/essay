@@ -18,6 +18,7 @@ const { chromium } = require('playwright');
     const pageErrors = [];
     page.on('pageerror', error => pageErrors.push(error.message));
     await page.goto(pathToFileURL(path.resolve('index.html')).href);
+    await page.locator('[role="tab"][aria-controls="transitions"]').click();
     await page.addStyleTag({ content: 'html { scroll-behavior: auto !important; }' });
     const cards = page.locator('.tool-card');
     assert.equal(await cards.count(), 10);
