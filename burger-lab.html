@@ -78,12 +78,13 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;pa
 .prompt .task{display:block;margin-top:8px}
 .prompt .task b{background:#dce5d4;padding:2px 6px;border-radius:4px;margin-right:5px;white-space:nowrap}
 .prompt .task + .task b{background:#f3dfc4}
-.lesson-nav{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));padding:6px;border:1px solid var(--line);border-radius:16px;background:#fffefb;gap:4px}
-.step-tab{min-width:0;border:1px solid transparent;border-radius:10px;background:transparent;padding:10px 12px;text-align:left;line-height:1.5}
+.lesson-nav{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));padding:6px;border:1px solid var(--line);border-radius:16px;background:var(--surface-light);gap:6px}
+.step-tab{min-width:0;border:1px solid #839185;border-radius:10px;background:var(--white);padding:10px 12px;text-align:left;line-height:1.5}
 .step-tab .num{display:block;font-family:Georgia,serif;font-size:.86rem;color:var(--muted);margin-bottom:3px}
 .step-tab .name{font-weight:800;font-size:.82rem}
-.step-tab:hover{background:#f6f7ef}
-.step-tab[aria-selected=true]{background:var(--surface-strong);color:var(--green);border-color:var(--orange)}
+.step-tab:hover{background:var(--surface-strong);border-color:var(--green)}
+.step-tab[aria-selected=true]{background:var(--surface-strong);color:var(--green);border-color:var(--orange);box-shadow:inset 0 0 0 1px var(--orange)}
+.step-tab:focus-visible{outline:3px solid var(--green);outline-offset:-5px}
 .step-tab[aria-selected=true] .num{color:var(--orange)}
 .step-tab.done .num:after{content:" ✓";color:var(--green)}
 .progress-line{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:12px 0;font-size:.72rem;color:var(--muted)}
@@ -910,6 +911,61 @@ function scrollLessonTarget(element,block){
 }
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names=['主架構','找特點','組句子','選立場','想理由或情境','結尾','案例文章'];
+function bindEmbeddedLesson(){
+  if(!isEmbedded)return;
+  document.documentElement.classList.add('embedded-lesson');
+  window.addEventListener('message',event=>{
+    if(event.source!==window.parent || (parentOrigin!=='*' && event.origin!==parentOrigin))return;
+    const message=event.data;
+    if(message?.type==='stepwrite:lesson-offset' && Number.isSafeInteger(message.offset) && message.offset>=0){
+      document.documentElement.style.setProperty('--lesson-scroll-offset',message.offset+'px');
+    }
+  });
+  document.querySelector('.lesson-entry')?.addEventListener('click',event=>{
+    event.preventDefault();
+    $('lessonNav').focus({preventScroll:true});
+    scrollLessonTarget($('lessonNav'),'start');
+  });
+  new ResizeObserver(()=>reportLessonHeight()).observe(document.body);
+  reportLessonHeight();
+}
+
+const topicFiles={robot:'topic-robot.js',marketing:'topic-marketing.js',disaster:'topic-disaster.js'};
+const lessonKey=window.location?.search && new URLSearchParams(window.location.search).get('lesson');
+if(Object.hasOwn(topicFiles,lessonKey)){
+  const main=document.querySelector('main');
+  main.hidden=true;
+  const files=['topic-lesson.css','topic-material-data.js',topicFiles[lessonKey],
+    'workshop-drafts.js','topic-support-data.js','topic-bonus.js','topic-fusion.js','topic-first.js','topic-second.js','topic-lesson.js'];
+  function loadFile(file){
+    return new Promise((resolve,reject)=>{
+      const isStyle=file.endsWith('.css');
+      const element=document.createElement(isStyle?'link':'script');
+      if(isStyle){
+        element.rel='stylesheet';
+        element.href=file;
+      }else{
+        element.async=false;
+        element.src=file;
+      }
+      element.onload=resolve;
+      element.onerror=reject;
+      document.head.append(element);
+    });
+  }
+  Promise.all(files.map(loadFile)).then(()=>{
+    if(!window.TopicLesson.start({names,scrollLessonTarget}))throw new Error('Unknown lesson');
+  }).catch(()=>{
+    const note=document.createElement('p');
+    note.setAttribute('role','alert');
+    note.textContent='這一題的教材暫時無法載入。請確認教材檔案放在同一個資料夾，再重新整理。';
+    main.replaceChildren(note);
+  }).finally(()=>{
+    main.hidden=false;
+    bindEmbeddedLesson();
+  });
+  return;
+}
 const subtitles=['看懂題目的兩個任務，認識每一段的結構。','先用一句話帶出兩張圖的比較重點，再從圖 A、圖 B 的 5W1H 勾選細節。','看看所選材料如何組成英文句子，再為兩張圖各選一個示範。','從「我想要什麼樣的公園」出發，把自己的選擇寫成第二段的第一句。','從五個 Why 選一個理由，再用前面兩關的 5W1H 寫出自己的解釋或例子。','用前面談過的兩個重點，說明這座公園為什麼適合你。','讀完兩段，看看作者怎麼從兩座公園的差異，寫到自己想要什麼樣的公園。'];
 const qs=[
  ['Where','場景與位置','環境／設施與所在位置分開標示；可以保留原句用字，也可以使用位置的替換片語。'],
@@ -2556,6 +2612,7 @@ function stage6(){
       </details>
     </article>
     ${advancedCase()}
+    <p><a href="index.html#workshop" target="_top">換一題，自己寫 →</a></p>
   </div>`;
 }
 const views=[stage0,stage1,stage2,stage3,stage4,stage5,stage6];
@@ -2995,23 +3052,7 @@ $('confirm').addEventListener('click',()=>{
 $('studyTrail').innerHTML=names.map(name=>`<span>${name}</span>`).join(' → ');
 restoreSupportDrafts();
 render();if(!storageOK)$('saveStatus').textContent='無法讀取保存進度；目前可繼續練習。';
-if(isEmbedded){
-  document.documentElement.classList.add('embedded-lesson');
-  window.addEventListener('message',event=>{
-    if(event.source!==window.parent || (parentOrigin!=='*' && event.origin!==parentOrigin))return;
-    const message=event.data;
-    if(message?.type==='stepwrite:lesson-offset' && Number.isSafeInteger(message.offset) && message.offset>=0){
-      document.documentElement.style.setProperty('--lesson-scroll-offset',message.offset+'px');
-    }
-  });
-  document.querySelector('.lesson-entry').addEventListener('click',event=>{
-    event.preventDefault();
-    $('lessonNav').focus({preventScroll:true});
-    scrollLessonTarget($('lessonNav'),'start');
-  });
-  new ResizeObserver(()=>reportLessonHeight()).observe(document.body);
-  reportLessonHeight();
-}
+bindEmbeddedLesson();
 })();
 </script>
 </body>

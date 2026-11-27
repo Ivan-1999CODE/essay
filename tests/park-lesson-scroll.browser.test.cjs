@@ -108,8 +108,38 @@ test('the embedded lesson fits the homepage and pointer and keyboard navigation 
         await checkStep(1, 'heading');
         await lesson.locator('#step-1').press('End');
         await checkStep(6, 'tab');
+        await lesson.locator('#confirm').click();
         await lesson.locator('#step-6').press('Home');
         await checkStep(0, 'tab');
+        assert.equal(await lesson.locator('#step-6.done').count(), 1, 'the completed step still has a frame after leaving it');
+        const tabs = lesson.locator('#lessonNav [role="tab"]');
+        const frames = await tabs.evaluateAll(elements => elements.map(el => {
+          const style = getComputedStyle(el);
+          const nav = el.parentElement;
+          const box = el.getBoundingClientRect();
+          const bounds = nav.getBoundingClientRect();
+          const sides = ['Top', 'Right', 'Bottom', 'Left'];
+          return {
+            visibleBorder: sides.every(side => {
+              const color = style['border' + side + 'Color'];
+              return parseFloat(style['border' + side + 'Width']) >= 1 &&
+                !['none', 'hidden'].includes(style['border' + side + 'Style']) &&
+                color !== 'rgba(0, 0, 0, 0)' && color !== getComputedStyle(nav).backgroundColor && color !== style.backgroundColor;
+            }),
+            fits: box.width > 0 && box.height > 0 && box.left >= bounds.left && box.right <= bounds.right + 1 &&
+              box.top >= bounds.top && box.bottom <= bounds.bottom + 1,
+            color: style.borderTopColor
+          };
+        }));
+        assert.equal(frames.length, 7);
+        frames.forEach((frame, index) => {
+          assert.ok(frame.visibleBorder, 'all four edges of step ' + (index + 1) + ' must be visible');
+          assert.ok(frame.fits, 'the whole frame of step ' + (index + 1) + ' fits inside the step list');
+        });
+        assert.notEqual(frames[0].color, frames[1].color, 'the selected step has a distinct outline');
+        assert.ok(await lesson.locator('#step-0').evaluate(el =>
+          el.matches(':focus-visible') && getComputedStyle(el).outlineStyle !== 'none' && parseFloat(getComputedStyle(el).outlineWidth) > 0
+        ), 'keyboard focus is visible on the selected step');
         await lesson.locator('#step-0').press('ArrowRight');
         await checkStep(1, 'tab');
         await page.locator('[role="tab"][aria-controls="workshop"]').click();

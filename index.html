@@ -150,61 +150,8 @@
     .section-heading { max-width: 720px; margin-bottom: 28px; }
     .section-heading h2 { margin-bottom: 8px; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.045em; }
     .section-heading p { color: var(--muted); }
-    .app {
-      display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      min-height: 720px;
-      overflow: hidden;
-      border: 1px solid rgba(205, 199, 187, .85);
-      border-radius: var(--radius);
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-    .sidebar { padding: 28px 20px; color: var(--white); background: var(--green-dark); }
-    .progress-label { display: flex; justify-content: space-between; font-size: .8rem; color: #b8d1c6; }
-    .progress-track { height: 8px; margin: 9px 0 28px; overflow: hidden; border-radius: 99px; background: rgba(255, 255, 255, .12); }
-    .progress-fill { width: 0; height: 100%; border-radius: inherit; background: var(--yellow); transition: width .3s ease; }
-    .steps { display: grid; gap: 8px; }
-    .step-link {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 11px;
-      align-items: center;
-      width: 100%;
-      padding: 11px;
-      border: 0;
-      border-radius: 14px;
-      color: #bed2c9;
-      text-align: left;
-      background: transparent;
-    }
-    .step-link:hover, .step-link.active { color: var(--white); background: rgba(255, 255, 255, .1); }
-    .step-link.done .step-num { color: var(--green-dark); background: #8dd2ae; }
-    .step-num { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: rgba(255, 255, 255, .1); font-weight: 900; }
-    .step-link strong, .step-link small { display: block; }
-    .step-link small { color: inherit; opacity: .72; }
-    .content { padding: clamp(26px, 5vw, 58px); }
-    .step-panel { display: none; animation: reveal .28s ease; }
-    .step-panel.active { display: block; }
     @keyframes reveal { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
     .step-kicker { color: var(--orange); font-weight: 900; font-size: .82rem; letter-spacing: .1em; }
-    .step-panel h2 { margin: 5px 0 8px; font-size: clamp(1.8rem, 4vw, 2.65rem); letter-spacing: -.04em; }
-    .lead { max-width: 720px; margin-bottom: 28px; color: var(--muted); }
-    .coach-note {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 26px;
-      padding: 15px 17px;
-      border-left: 4px solid var(--orange);
-      border-radius: 0 12px 12px 0;
-      background: var(--orange-soft);
-    }
-    .coach-note span { flex: 0 0 auto; }
-    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .field { display: grid; gap: 7px; }
-    .field.full { grid-column: 1 / -1; }
-    label { font-weight: 850; }
-    .hint { color: var(--muted); font-size: .86rem; font-weight: 500; }
     input, textarea {
       width: 100%;
       border: 1px solid var(--line);
@@ -217,45 +164,8 @@
     input { min-height: 48px; padding: 11px 13px; }
     textarea { min-height: 104px; padding: 12px 13px; resize: vertical; line-height: 1.65; }
     input:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(37, 109, 88, .1); }
-    .material-card, .sentence-card, .check-card {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--white);
-    }
-    .material-card h3, .sentence-card h3 { margin-bottom: 4px; font-size: 1.05rem; }
-    .material-card.a { border-top: 5px solid var(--yellow); }
-    .material-card.b { border-top: 5px solid var(--green); }
-    .material-list { display: grid; gap: 11px; margin-top: 16px; }
-    .split-title { display: flex; justify-content: space-between; gap: 14px; align-items: center; margin: 30px 0 14px; }
-    .split-title h3 { margin: 0; }
-    .sentence-stack { display: grid; gap: 14px; }
-    .sentence-card { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 14px; }
-    .sentence-tag { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; color: var(--green-dark); background: var(--green-soft); font-weight: 900; }
-    .sentence-card textarea { min-height: 82px; margin-top: 10px; }
-    .sentence-help { color: var(--muted); font-size: .88rem; }
-    .phrase-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .phrase-group { padding: 18px; border: 1px solid var(--line); border-radius: 17px; background: var(--white); }
-    .phrase-group h3 { margin-bottom: 11px; font-size: 1rem; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { padding: 7px 10px; border: 1px solid #c9d8d1; border-radius: 999px; color: var(--green-dark); background: var(--green-soft); font-size: .85rem; font-weight: 750; }
-    .upgrade-table { width: 100%; margin-top: 24px; border-collapse: collapse; overflow: hidden; border-radius: 14px; font-size: .93rem; }
-    .upgrade-table th, .upgrade-table td { padding: 13px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-    .upgrade-table th { color: var(--green-dark); background: var(--green-soft); }
-    .check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
-    .check-card { display: flex; gap: 11px; align-items: flex-start; }
-    .check-card input { width: 20px; min-height: auto; height: 20px; margin-top: 3px; accent-color: var(--green); }
-    .check-card label { font-size: .94rem; }
-    .draft-wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(220px, .5fr); gap: 20px; }
-    .final-draft { min-height: 420px; font-family: Georgia, "Times New Roman", serif; font-size: 1.08rem; line-height: 1.9; }
-    .metrics { display: grid; gap: 12px; align-content: start; }
-    .metric { padding: 15px; border: 1px solid var(--line); border-radius: 15px; background: var(--white); }
-    .metric strong { display: block; font-size: 1.7rem; line-height: 1.15; }
-    .metric span { color: var(--muted); font-size: .84rem; }
-    .feedback { margin: 0; padding-left: 20px; color: var(--muted); font-size: .9rem; }
-    .feedback li { margin: 6px 0; }
-    .feedback .ok { color: var(--green); }
-    .step-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); }
     .reference { padding: 80px 0; }
     .reference-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 36px; align-items: start; }
     .reference details { margin-bottom: 12px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
@@ -264,25 +174,9 @@
     .model-essay { padding: 20px; border-radius: 16px; color: #f1f7f4; background: var(--green-dark); font-family: Georgia, "Times New Roman", serif; }
     .model-essay p:last-child { margin-bottom: 0; }
     footer { padding: 30px 0 44px; color: var(--muted); text-align: center; font-size: .9rem; }
-    .toast {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 10;
-      padding: 11px 15px;
-      border-radius: 12px;
-      color: var(--white);
-      background: var(--green-dark);
-      box-shadow: var(--shadow);
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(10px);
-      transition: .2s ease;
-    }
-    .toast.show { opacity: 1; transform: translateY(0); }
     .top-links {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 3px;
       padding: 4px;
       border: 1px solid #c6d4c9;
@@ -433,24 +327,6 @@
     .example { margin: 12px 0 0; padding-left: 12px; border-left: 3px solid var(--yellow); font-family: Georgia, "Times New Roman", serif; }
     .example + .sentence-translation { margin: 3px 0 0; padding-left: 15px; }
     .warning { margin-top: 12px; color: #8a4a2c; font-size: .86rem; }
-    .topic-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .topic-card { border: 1px solid var(--line); border-radius: 20px; background: var(--paper); overflow: hidden; }
-    .topic-card > summary { padding: 22px; cursor: pointer; list-style: none; }
-    .topic-card > summary::-webkit-details-marker { display: none; }
-    .topic-year { display: inline-block; margin-bottom: 8px; padding: 4px 9px; border-radius: 8px; color: var(--green-dark); background: var(--green-soft); font-size: .76rem; font-weight: 900; }
-    .topic-card h3 { margin: 0 0 5px; }
-    .topic-card > summary p { margin: 0; color: var(--muted); font-size: .9rem; }
-    .topic-content { padding: 0 22px 22px; border-top: 1px solid var(--line); }
-    .topic-steps { display: grid; gap: 10px; margin: 18px 0; }
-    .topic-step { padding: 13px 14px; border-radius: 12px; background: var(--white); }
-    .topic-step strong { color: var(--green-dark); }
-    .bilingual { display: grid; gap: 12px; }
-    .bilingual-row { padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
-    .bilingual-row p { margin-bottom: 4px; }
-    .bilingual-row .zh { color: #858e89; font-size: .8rem; }
-    .bilingual-row .function-note { color: #9a765f; font-size: .76rem; }
-    .upgrade-table .sentence-translation { margin-top: 4px; }
-    .topic-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
     .core-badge { color: var(--green-dark); background: var(--green-soft); }
     .challenge-badge { color: #79411f; background: var(--orange-soft); }
 
@@ -460,14 +336,6 @@
       .hero, .reference-grid, .learning-head { grid-template-columns: 1fr; }
       .hero { padding-top: 45px; }
       .method-card { max-width: 520px; transform: none; }
-      .app { grid-template-columns: 1fr; }
-      .sidebar { padding: 18px; }
-      .steps { grid-template-columns: repeat(6, minmax(86px, 1fr)); overflow-x: auto; padding-bottom: 5px; }
-      .step-link { grid-template-columns: 30px 1fr; padding: 8px; }
-      .step-link small { display: none; }
-      .progress-track { margin-bottom: 16px; }
-      .draft-wrap { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: repeat(3, 1fr); }
       .level-note { justify-self: start; }
     }
     @media (max-width: 640px) {
@@ -476,15 +344,7 @@
       .save-status { font-size: .76rem; }
       .hero { gap: 30px; padding: 34px 4px 60px; }
       h1 { font-size: 2.8rem; }
-      .content { padding: 26px 18px; }
-      .form-grid, .phrase-groups, .check-grid, .task-grid, .burger-grid, .idea-grid, .tool-grid, .topic-grid, .outline-grid, .connector-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .sentence-card { grid-template-columns: 1fr; }
-      .split-title { align-items: flex-start; flex-direction: column; }
-      .metrics { grid-template-columns: 1fr; }
-      .step-actions { flex-direction: column-reverse; }
-      .step-actions .btn { width: 100%; }
-      .upgrade-table { display: block; overflow-x: auto; }
+      .task-grid, .burger-grid, .idea-grid, .tool-grid, .outline-grid, .connector-grid { grid-template-columns: 1fr; }
       .top-links { gap: 2px; padding: 3px; }
       .top-links [role="tab"] { min-height: 46px; padding-inline: 3px; font-size: .9rem; }
       .lesson-tabs { grid-template-columns: repeat(6, minmax(130px, 1fr)); overflow-x: auto; padding: 0 12px; }
@@ -495,15 +355,15 @@
   </style>
   <link rel="stylesheet" href="lesson-practice.css">
   <link rel="stylesheet" href="transition-reference.css">
+  <link rel="stylesheet" href="workshop.css">
 </head>
 <body>
   <header class="shell topbar">
     <div class="brand"><span class="brand-mark">W</span><span>StepWrite</span></div>
     <nav class="top-links" role="tablist" aria-label="作文練習分頁">
       <a id="tab-learn" href="#learn" role="tab" aria-controls="learn" aria-selected="true">七關作文</a>
-      <a id="tab-workshop" href="#workshop" role="tab" aria-controls="workshop" aria-selected="false" tabindex="-1">寫作工作桌</a>
       <a id="tab-transitions" href="#transitions" role="tab" aria-controls="transitions" aria-selected="false" tabindex="-1">轉折詞與長句</a>
-      <a id="tab-topics" href="#topics" role="tab" aria-controls="topics" aria-selected="false" tabindex="-1">歷屆練習</a>
+      <a id="tab-workshop" href="#workshop" role="tab" aria-controls="workshop" aria-selected="false" tabindex="-1">換一題，自己寫</a>
     </nav>
     <div class="save-status" id="saveStatus" aria-live="polite">進度會自動保存在這台裝置</div>
   </header>
@@ -514,10 +374,10 @@
         <div>
           <span class="eyebrow">GSAT ENGLISH COMPOSITION</span>
           <h1>不是背範文，<br>是把想法<em>寫出來。</em></h1>
-          <p class="hero-copy">先用中文讀題、看圖、選材，逐層完成兩段漢堡，再把自己的構思寫成英文。</p>
+          <p class="hero-copy">選一題，先用中文拆解兩段任務，再把選好的素材、理由和例子，一層一層寫成自己的英文作文。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#learn">從原題開始，一步一步想 →</a>
-            <button class="btn btn-secondary" data-start>我已經會了，直接開始寫</button>
+            <a class="btn btn-primary" href="#learn">選一題，開始七關練習 →</a>
+            <button class="btn btn-secondary" data-start>換一題，自己寫</button>
           </div>
         </div>
         <aside class="method-card" aria-label="寫作流程摘要">
@@ -530,185 +390,17 @@
         </aside>
       </section>
 
-      <section class="shell learning" tabindex="-1" aria-label="111 年學測公園題七關作文練習">
-        <iframe class="park-lesson-frame" src="burger-lab.html#embedded" title="111 年學測公園題七關作文練習"></iframe>
+      <section class="shell learning" id="lesson-picker" tabindex="-1" aria-labelledby="lessonPickerTitle">
+        <h2 id="lessonPickerTitle">選一篇作文，練七個步驟</h2>
+        <nav class="writing-topics lesson-topic-links" aria-labelledby="lessonPickerTitle">
+          <a href="?lesson=park#lesson-picker" data-lesson="park" aria-current="page"><small>111 年學測</small><strong>我的理想公園</strong></a>
+          <a href="?lesson=robot#lesson-picker" data-lesson="robot"><small>113 年學測</small><strong>機器人幫手</strong></a>
+          <a href="?lesson=marketing#lesson-picker" data-lesson="marketing"><small>115 年模擬考</small><strong>飢餓行銷與折扣促銷</strong></a>
+          <a href="?lesson=disaster#lesson-picker" data-lesson="disaster"><small>115 年預測題</small><strong>災害與志願服務</strong></a>
+        </nav>
+        <iframe class="park-lesson-frame" title="111 年學測公園題七關作文練習"></iframe>
       </section>
     </div>
-
-    <section class="shell workspace" id="workshop" role="tabpanel" aria-labelledby="tab-workshop" tabindex="0">
-      <div class="section-heading">
-        <h2>你的寫作工作桌</h2>
-        <p>不必一次想完整篇。每一格只放一個想法，我們會在最後幫你把句子組成草稿。</p>
-        <div class="topic-actions" aria-label="選擇練習題">
-          <button class="btn btn-secondary btn-small" data-load-topic="park">111 年公園題</button>
-          <button class="btn btn-secondary btn-small" data-load-topic="robot">113 年機器人題</button>
-          <button class="btn btn-secondary btn-small" data-load-topic="marketing">115 年模擬考</button>
-          <button class="btn btn-secondary btn-small" data-load-topic="disaster">115 年預測題</button>
-        </div>
-        <input type="hidden" id="selectedTopic" class="persist" value="park">
-      </div>
-
-      <div class="app">
-        <aside class="sidebar">
-          <div class="progress-label"><span>填寫進度</span><strong id="progressText">0%</strong></div>
-          <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
-          <nav class="steps" aria-label="寫作步驟">
-            <button class="step-link active" data-step="0"><span class="step-num">1</span><span><strong>拆解題目</strong><small>確認兩段任務</small></span></button>
-            <button class="step-link" data-step="1"><span class="step-num">2</span><span><strong>收集素材</strong><small>先想內容，不管文法</small></span></button>
-            <button class="step-link" data-step="2"><span class="step-num">3</span><span><strong>寫第一段</strong><small>描述與比較</small></span></button>
-            <button class="step-link" data-step="3"><span class="step-num">4</span><span><strong>寫第二段</strong><small>觀點與支持</small></span></button>
-            <button class="step-link" data-step="4"><span class="step-num">5</span><span><strong>升級表達</strong><small>連接與變化</small></span></button>
-            <button class="step-link" data-step="5"><span class="step-num">6</span><span><strong>完成全文</strong><small>組稿與檢查</small></span></button>
-          </nav>
-        </aside>
-
-        <div class="content">
-          <section class="step-panel active" data-panel="0">
-            <span class="step-kicker">STEP 01 · UNDERSTAND</span>
-            <h2>先把題目翻成兩個任務</h2>
-            <p class="lead">作文卡住，常常不是英文不夠好，而是還沒決定每一段要完成什麼。</p>
-            <div class="coach-note"><span>💡</span><div><strong>教練提醒：</strong>先用中文寫也可以。這一步的目標是「看懂題目」，不是寫漂亮英文。</div></div>
-            <div class="form-grid">
-              <div class="field full">
-                <label for="prompt">題目或提示</label>
-                <span class="hint">把老師給的作文題目貼在這裡，或用一句話寫下主題。</span>
-                <textarea id="prompt" class="persist required-0" placeholder="例：比較兩張公園圖片，並描述你理想中的公園。"></textarea>
-              </div>
-              <div class="field">
-                <label for="p1task">第一段要做什麼？</label>
-                <span class="hint">通常是描述、比較或說明現象。</span>
-                <textarea id="p1task" class="persist required-0" placeholder="我要描述……並比較……"></textarea>
-              </div>
-              <div class="field">
-                <label for="p2task">第二段要做什麼？</label>
-                <span class="hint">通常是表達偏好、說明理由或分享經驗。</span>
-                <textarea id="p2task" class="persist required-0" placeholder="我要表達……並用兩個理由支持。"></textarea>
-              </div>
-            </div>
-            <div class="step-actions"><span></span><button class="btn btn-primary" data-next>任務清楚了，找素材 →</button></div>
-          </section>
-
-          <section class="step-panel" data-panel="1">
-            <span class="step-kicker">STEP 02 · COLLECT</span>
-            <h2>先存內容，再處理英文</h2>
-            <p class="lead">參照自己的中文構思，將選好的材料逐項轉成英文：物品可先用名詞片語，補充細節、用途、理由與例子則寫成完整句。</p>
-            <div class="coach-note"><span>🔎</span><div><strong>觀察與推想分開：</strong>描述圖中看得見的內容；如果寫的是可能用途，用 can 或 could 表達。看不清楚的人物活動與時間，可以不寫。</div></div>
-            <div class="form-grid">
-              <div class="material-card a">
-                <h3 id="materialATitle">Picture A／第一個情境</h3>
-                <span class="hint" id="materialAHint">至少記下 2 個看得見的細節。</span>
-                <div class="material-list">
-                  <input id="a1" class="persist required-1" aria-label="圖片 A 可見細節：名詞片語" placeholder="我選出的可見設施或景物">
-                  <input id="a2" class="persist required-1" aria-label="圖片 A 補充細節或可能用途：完整句" placeholder="補充細節，或用 can 表達可能用途">
-                  <input id="a3" class="persist" aria-label="圖片 A 其他有依據的觀察，可略過" placeholder="其他有依據的觀察（可略過）">
-                </div>
-              </div>
-              <div class="material-card b">
-                <h3 id="materialBTitle">Picture B／第二個情境</h3>
-                <span class="hint" id="materialBHint">找出能和 A 形成比較的細節。</span>
-                <div class="material-list">
-                  <input id="b1" class="persist required-1" aria-label="圖片 B 可見細節：名詞片語" placeholder="我選出的可見設施或景物">
-                  <input id="b2" class="persist required-1" aria-label="圖片 B 補充細節或可能用途：完整句" placeholder="補充細節，或用 can 表達可能用途">
-                  <input id="b3" class="persist" aria-label="圖片 B 其他有依據的觀察，可略過" placeholder="其他有依據的觀察（可略過）">
-                </div>
-              </div>
-              <div class="field full">
-                <label for="contrast" id="contrastLabel">兩者最重要的差異（可略過）</label>
-                <span class="hint" id="contrastHint">如果前面已經說清楚差異，這格可以留白；需要收束時，再補一句完整句。</span>
-                <input id="contrast" class="persist" placeholder="用相同面向收束兩圖差異，前面已清楚時可略過">
-              </div>
-            </div>
-            <div class="split-title"><h3>第二段的觀點素材</h3><button class="btn btn-secondary btn-small" id="loadTopicMaterials">卡住時，帶入這題的素材示範</button></div>
-            <div class="form-grid">
-              <div class="field full"><label for="stance">我的理想公園／立場</label><span class="hint" id="stanceHint">可填名詞片語，或直接寫 I prefer ... 的完整句；也可以結合兩座公園的特色。</span><input id="stance" class="persist required-1" placeholder="a natural park with trees and open space"></div>
-              <div class="field"><label for="reason1">理由一（完整句）</label><input id="reason1" class="persist required-1" placeholder="It helps me relax after a busy school day."></div>
-              <div class="field"><label for="detail1">具體解釋／例子一（完整句）</label><textarea id="detail1" class="persist required-1" placeholder="I can walk under the trees and listen to birds."></textarea></div>
-              <div class="field"><label for="reason2">理由二（完整句）</label><input id="reason2" class="persist required-1" placeholder="It gives my family space to spend time together."></div>
-              <div class="field"><label for="detail2">具體解釋／例子二（完整句）</label><textarea id="detail2" class="persist required-1" placeholder="We can have a picnic on the grass and talk about our week."></textarea></div>
-            </div>
-            <div class="step-actions"><button class="btn btn-quiet" data-prev>← 回上一步</button><button class="btn btn-primary" data-next>素材夠了，開始組句 →</button></div>
-          </section>
-
-          <section class="step-panel" data-panel="2">
-            <span class="step-kicker">STEP 03 · DESCRIBE</span>
-            <h2>依照任務，把細節組成第一段</h2>
-            <p class="lead">公園題先寫「總述 → 圖 A → 圖 B」，需要時再收束差異。每格可以放 1–3 個短句，不必為了填滿格子重複意思。</p>
-            <div class="split-title"><h3>Paragraph 1</h3><button class="btn btn-secondary btn-small" data-build="p1">用我的素材產生基本句</button></div>
-            <p class="hint" id="buildP1Notice" role="status">產生的是待修改的草稿；工具不會判斷文法或內容是否充分。請確認每句都有主詞、動詞。</p>
-            <div class="sentence-stack">
-              <div class="sentence-card"><span class="sentence-tag">1</span><div><h3>總述主題</h3><span class="sentence-help">先告訴讀者兩張圖共同在談什麼，不要急著寫細節。</span><textarea id="p1s1" class="persist required-2" placeholder="The two pictures show two different types of parks." aria-describedby="p1s1Note"></textarea><p class="draft-field-note" id="p1s1Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">2</span><div><h3 id="p1Task2Title">描述 Picture A</h3><span class="sentence-help" id="p1Task2Help">細節後面補上感受或結果，句子會更有意義。</span><textarea id="p1s2" class="persist required-2" placeholder="In Picture A, ..." aria-describedby="p1s2Note"></textarea><p class="draft-field-note" id="p1s2Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">3</span><div><h3 id="p1Task3Title">對比 Picture B</h3><span class="sentence-help" id="p1Task3Help">用 By contrast 或 In comparison 清楚換到另一張圖。</span><textarea id="p1s3" class="persist required-2" placeholder="By contrast, Picture B ..." aria-describedby="p1s3Note"></textarea><p class="draft-field-note" id="p1s3Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">4</span><div><h3 id="p1Task4Title">收束主要差異（可略過）</h3><span class="sentence-help" id="p1Task4Help">前面已經清楚呈現差異時，不需要再重複。</span><textarea id="p1s4" class="persist" placeholder="用一句話收束已描述的差異，或沿用前一句。" aria-describedby="p1s4Note"></textarea><p class="draft-field-note" id="p1s4Note" role="status" hidden></p></div></div>
-            </div>
-            <div class="step-actions"><button class="btn btn-quiet" data-prev>← 回上一步</button><button class="btn btn-primary" data-next>第一段完成，寫我的觀點 →</button></div>
-          </section>
-
-          <section class="step-panel" data-panel="3">
-            <span class="step-kicker">STEP 04 · EXPLAIN</span>
-            <h2>每個理由都要回答「所以呢？」</h2>
-            <p class="lead">第二段不是列點。理由後面一定要補解釋、情境或例子，讀者才知道你的觀點為什麼成立。</p>
-            <div class="coach-note"><span>🧩</span><div><strong>最穩定的組合：</strong>立場句 + 理由一 + 具體化 + 理由二 + 具體化 + 結尾句。</div></div>
-            <div class="split-title"><h3>Paragraph 2</h3><button class="btn btn-secondary btn-small" data-build="p2">用我的素材產生基本句</button></div>
-            <p class="hint" id="buildP2Notice" role="status">先保留自己的簡單句，再檢查例子是否真的支持理由；自動組合不代表內容已經完整。</p>
-            <div class="sentence-stack">
-              <div class="sentence-card"><span class="sentence-tag">1</span><div><h3>直接表明立場</h3><textarea id="p2s1" class="persist required-3" placeholder="Personally, I prefer ..." aria-describedby="p2s1Note"></textarea><p class="draft-field-note" id="p2s1Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">2</span><div><h3>提出理由一</h3><textarea id="p2s2" class="persist required-3" placeholder="To begin with, ..." aria-describedby="p2s2Note"></textarea><p class="draft-field-note" id="p2s2Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">3</span><div><h3>把理由一具體化</h3><textarea id="p2s3" class="persist required-3" placeholder="For example, ..." aria-describedby="p2s3Note"></textarea><p class="draft-field-note" id="p2s3Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">4</span><div><h3>提出理由二</h3><textarea id="p2s4" class="persist required-3" placeholder="In addition, ..." aria-describedby="p2s4Note"></textarea><p class="draft-field-note" id="p2s4Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">5</span><div><h3>把理由二具體化</h3><textarea id="p2s5" class="persist required-3" placeholder="This means that ..." aria-describedby="p2s5Note"></textarea><p class="draft-field-note" id="p2s5Note" role="status" hidden></p></div></div>
-              <div class="sentence-card"><span class="sentence-tag">6</span><div><h3>回扣立場，完成結尾</h3><textarea id="p2s6" class="persist required-3" placeholder="For these reasons, ..." aria-describedby="p2s6Note"></textarea><p class="draft-field-note" id="p2s6Note" role="status" hidden></p></div></div>
-            </div>
-            <div class="step-actions"><button class="btn btn-quiet" data-prev>← 回上一步</button><button class="btn btn-primary" data-next>內容完成，讓表達更順 →</button></div>
-          </section>
-
-          <section class="step-panel" data-panel="4">
-            <span class="step-kicker">STEP 05 · REFINE</span>
-            <h2>連接詞是路標，不是裝飾品</h2>
-            <p class="lead">先看句子之間的關係，再選一個最準確的連接詞。每句都加反而會讓文章僵硬。</p>
-            <div class="phrase-groups">
-              <div class="phrase-group"><h3>比較兩個畫面</h3><div class="chips"><span class="chip">By contrast,</span><span class="chip">In comparison,</span><span class="chip">while</span><span class="chip">whereas</span></div></div>
-              <div class="phrase-group"><h3>安排兩個理由</h3><div class="chips"><span class="chip">To begin with,</span><span class="chip">In addition,</span><span class="chip">Another reason is that</span></div></div>
-              <div class="phrase-group"><h3>補上解釋或例子</h3><div class="chips"><span class="chip">For example,</span><span class="chip">In other words,</span><span class="chip">As a result,</span><span class="chip">This allows ... to ...</span></div></div>
-              <div class="phrase-group"><h3>完成文章</h3><div class="chips"><span class="chip">For these reasons,</span><span class="chip">All in all,</span><span class="chip">Therefore,</span></div></div>
-            </div>
-            <table class="upgrade-table">
-              <thead><tr><th>如果一直寫……</th><th>可以試著改成……</th><th>注意</th></tr></thead>
-              <tbody>
-                <tr><td>There are many trees.<small class="sentence-translation">那裡有許多樹木。</small></td><td>The park is filled with tall trees.<small class="sentence-translation">公園裡長滿高大的樹木。</small></td><td>用具體名詞和動作畫出畫面。</td></tr>
-                <tr><td>I like it because it is good.<small class="sentence-translation">我喜歡它，因為它很好。</small></td><td>I prefer it because it helps me unwind.<small class="sentence-translation">我比較喜歡它，因為它能幫助我放鬆。</small></td><td>把 good 換成實際好處。</td></tr>
-                <tr><td>People can picnic. People can exercise.<small class="sentence-translation">人們可以野餐。人們也可以運動。</small></td><td>People can not only enjoy picnics but also exercise together.<small class="sentence-translation">人們不但可以享受野餐，也可以一起運動。</small></td><td>只在兩件事同等重要時使用。</td></tr>
-              </tbody>
-            </table>
-            <div class="split-title"><h3>交稿前，自己做 4 個決定</h3></div>
-            <div class="check-grid">
-              <div class="check-card"><input type="checkbox" id="check1" class="persist required-4"><label for="check1">我刪掉了重複、沒有新資訊的句子。</label></div>
-              <div class="check-card"><input type="checkbox" id="check2" class="persist required-4"><label for="check2">每個理由後面都有解釋或例子。</label></div>
-              <div class="check-card"><input type="checkbox" id="check3" class="persist required-4"><label for="check3">我沒有為了「高級」而使用不確定的單字。</label></div>
-              <div class="check-card"><input type="checkbox" id="check4" class="persist required-4"><label for="check4">我有大聲讀一次，修掉不順的地方。</label></div>
-            </div>
-            <div class="step-actions"><button class="btn btn-quiet" data-prev>← 回上一步</button><button class="btn btn-primary" data-next>組合我的完整作文 →</button></div>
-          </section>
-
-          <section class="step-panel" data-panel="5">
-            <span class="step-kicker">STEP 06 · COMPLETE</span>
-            <h2>這是你的完整草稿</h2>
-            <p class="lead">先讀內容是否清楚，再檢查文法與拼字。右側數字是練習提示，不是分數。</p>
-            <div class="split-title"><h3>Final draft</h3><button class="btn btn-secondary btn-small" id="rebuildDraft">重新從句子組合</button></div>
-            <div class="draft-wrap">
-              <textarea id="finalDraft" class="persist final-draft required-5" aria-label="完整作文草稿" placeholder="完成前面的句子後，全文會出現在這裡。" aria-describedby="finalDraftNote"></textarea><p class="draft-field-note" id="finalDraftNote" role="status" hidden></p>
-              <aside class="metrics" aria-label="草稿檢查結果">
-                <div class="metric"><strong id="wordCount">0</strong><span>英文單字／練習目標 120+</span></div>
-                <div class="metric"><strong id="paragraphCount">0</strong><span>段落／目標 2 段</span></div>
-                <div class="metric"><strong id="sentenceCount">0</strong><span>句子／句數不代表內容品質</span></div>
-                <div class="metric"><strong>快速檢查</strong><ul class="feedback" id="feedback"></ul></div>
-              </aside>
-            </div>
-            <div class="step-actions"><button class="btn btn-quiet" data-prev>← 回上一步</button><div><button class="btn btn-quiet btn-small" id="clearAll">清空工作桌</button> <button class="btn btn-primary" id="copyDraft">複製全文</button></div></div>
-          </section>
-        </div>
-      </div>
-    </section>
 
     <section class="resource-section alt" id="transitions" role="tabpanel" aria-labelledby="tab-transitions" tabindex="0">
       <div class="shell">
@@ -896,126 +588,71 @@
       </div>
     </section>
 
-    <section class="resource-section" id="topics" role="tabpanel" aria-labelledby="tab-topics" tabindex="0">
-      <div class="shell">
-        <div class="resource-head">
-          <div class="section-heading">
-            <span class="step-kicker">PRACTICE LIBRARY</span>
-            <h2>同一個架構，換不同題目練習</h2>
-            <p>先看兩段任務和關鍵字方向，再到工作桌自己寫。完整答案都收在最後一層。</p>
-          </div>
-        </div>
-
-        <div class="topic-grid">
-          <details class="topic-card">
-            <summary><span class="topic-year">111 年學測 · 入門</span><h3>不同公園與理想公園</h3><p>描述兩座公園的特色，並說明自己理想中的公園。</p></summary>
-            <div class="topic-content">
-              <div class="topic-steps">
-                <div class="topic-step"><strong>第一段：</strong>描述圖 A、圖 B，收束兩者主要差異。</div>
-                <div class="topic-step"><strong>第二段：</strong>描述自己的理想公園，並解釋理由；可以選擇或結合兩圖特色。</div>
-                <div class="topic-step"><strong>先想：</strong>哪些細節看得見？哪些用途是推想？哪些特色符合自己的需要？</div>
-              </div>
-              <p>在七關練習中把句子放進漢堡，第 07 關就能讀到自己組成的兩段作文。</p>
-              <div class="topic-actions"><a class="btn btn-secondary btn-small" href="#learn">回到七關作文練習</a><button class="btn btn-primary btn-small" data-use-topic="park">把題目帶入工作桌</button></div>
-            </div>
-          </details>
-
-          <details class="topic-card">
-            <summary><span class="topic-year">113 年學測 · 中階</span><h3>青少年問題與機器人幫手</h3><p>選一個最想解決的問題，設計能協助你的機器人。</p></summary>
-            <div class="topic-content">
-              <div class="topic-steps">
-                <div class="topic-step"><strong>第一段：</strong>選擇情緒起伏，說明它對課業與人際的影響及可能原因。</div>
-                <div class="topic-step"><strong>第二段：</strong>說明機器人如何偵測情緒、安撫自己並提供行動提醒。</div>
-                <div class="topic-step"><strong>關鍵字：</strong>mood swings, pressure, detect, facial expression, comfort, manage stress</div>
-              </div>
-              <div class="topic-actions"><button class="btn btn-primary btn-small" data-use-topic="robot">先自己寫這一題</button></div>
-              <details class="answer-reveal">
-                <summary>我已完成架構，顯示中英對照答案</summary>
-                <div class="bilingual">
-                  <div class="bilingual-row"><p>Among the three problems, I would like to solve mood swings.</p><p class="zh">在這三個問題中，我想解決的是情緒起伏。</p></div>
-                  <div class="bilingual-row"><p>Many teenagers, including me, sometimes feel angry or sad for no clear reason.</p><p class="zh">許多青少年，包括我自己，有時會莫名感到生氣或難過。</p></div>
-                  <div class="bilingual-row"><p>This emotional change makes it hard to focus on schoolwork or get along with others.</p><p class="zh">這種情緒變化讓人難以專心讀書或與他人相處。</p></div>
-                  <div class="bilingual-row"><p>I believe it happens because we face too much pressure from studies and relationships.</p><p class="zh">我認為這是因為我們面臨過多來自課業和人際關係的壓力。</p></div>
-                  <div class="bilingual-row"><p>If I had a robot helper, I would like it to help me control my emotions.</p><p class="zh">如果我有一個機器人幫手，我希望它能幫助我控制情緒。</p></div>
-                  <div class="bilingual-row"><p>First, the robot could detect my mood through my voice and facial expression.</p><p class="zh">首先，機器人可以透過我的聲音和表情偵測情緒。</p></div>
-                  <div class="bilingual-row"><p>When it notices I am upset, it could comfort me with calm words or play my favorite music.</p><p class="zh">當它發現我心情不好時，可以用平靜的話語安撫我，或播放我喜歡的音樂。</p></div>
-                  <div class="bilingual-row"><p>Second, it could remind me to take deep breaths or go outside for a walk.</p><p class="zh">其次，它可以提醒我深呼吸或外出散步。</p></div>
-                  <div class="bilingual-row"><p>With its help, I could learn to manage stress and stay positive even when I face difficulties.</p><p class="zh">有了它的幫助，我能學會管理壓力，並在面對困難時保持正向。</p></div>
-                </div>
-              </details>
-            </div>
-          </details>
-
-          <details class="topic-card">
-            <summary><span class="topic-year">115 年模擬考 · 中階</span><h3>飢餓行銷與折扣促銷</h3><p>比較兩種促銷方式，並判斷哪一種更能影響消費。</p></summary>
-            <div class="topic-content">
-              <div class="topic-steps">
-                <div class="topic-step"><strong>第一段：</strong>定義飢餓行銷與折扣促銷，比較兩者影響消費者的方式。</div>
-                <div class="topic-step"><strong>第二段：</strong>選擇折扣促銷，以省錢感受、個人購物經驗和客群範圍支持。</div>
-                <div class="topic-step"><strong>關鍵字：</strong>scarcity, limited products, lower prices, save money, price-sensitive</div>
-              </div>
-              <div class="topic-actions"><button class="btn btn-primary btn-small" data-use-topic="marketing">先自己寫這一題</button></div>
-              <details class="answer-reveal">
-                <summary>我已完成架構，顯示中英對照答案</summary>
-                <div class="bilingual">
-                  <div class="bilingual-row"><p>In modern society, many businesses use various strategies to attract consumers and boost sales.</p><p class="zh">在現代社會，許多企業運用各種策略吸引消費者並提升銷售量。</p></div>
-                  <div class="bilingual-row"><p>Two of the most common methods are hunger marketing and discount promotion.</p><p class="zh">其中常見的兩種方式是飢餓行銷與打折促銷。</p></div>
-                  <div class="bilingual-row"><p>Hunger marketing creates a sense of scarcity by limiting the number of products or setting a short selling period, which makes customers feel the need to buy quickly before the product runs out.</p><p class="zh">飢餓行銷透過限制商品數量或銷售時間製造稀有感，促使消費者趕快購買。</p></div>
-                  <div class="bilingual-row"><p>In contrast, discount promotion lowers prices directly to encourage people to purchase more.</p><p class="zh">相較之下，打折促銷直接降低價格，鼓勵人們購買更多商品。</p></div>
-                  <div class="bilingual-row"><p>Both strategies aim to increase sales, but they work in different psychological ways.</p><p class="zh">兩種策略都想提升銷售量，但運用的心理方式不同。</p></div>
-                  <div class="bilingual-row"><p>In my opinion, discount promotion is more effective in encouraging people to spend money.</p><p class="zh">在我看來，打折促銷更能促使人們消費。</p></div>
-                  <div class="bilingual-row"><p>First, people can clearly see how much they save, and that feeling of getting a good deal often motivates them to buy things they did not plan to.</p><p class="zh">首先，消費者能清楚看到省下多少錢，撿到便宜的感覺常使人買下原本沒計畫購買的東西。</p></div>
-                  <div class="bilingual-row"><p>For example, I once bought a pair of shoes just because it was 50% off, even though I did not really need it.</p><p class="zh">例如，我曾因鞋子打五折而買下一雙，其實我並不真的需要它。</p></div>
-                  <div class="bilingual-row"><p>Second, discounts can attract a wider range of customers, including those who are price-sensitive or not brand-loyal.</p><p class="zh">其次，折扣能吸引更多不同類型的顧客，包括對價格敏感或不忠於特定品牌的人。</p></div>
-                  <div class="bilingual-row"><p>To sum up, discount promotion is a more practical and direct way to make consumers spend more without much hesitation.</p><p class="zh">總而言之，打折促銷是更實際、直接的方式，能讓消費者較少猶豫地購買商品。</p></div>
-                </div>
-              </details>
-            </div>
-          </details>
-
-          <details class="topic-card">
-            <summary><span class="topic-year">115 年預測題 · 挑戰</span><h3>災害、互助與志願服務</h3><p>描述災害中的兩種情景，說明互助與志工服務的價值。</p></summary>
-            <div class="topic-content">
-              <div class="topic-steps">
-                <div class="topic-step"><strong>第一段：</strong>描寫受災者的困境，再轉到志工分送物資的溫暖情景。</div>
-                <div class="topic-step"><strong>第二段：</strong>用希望與情感支持、同理心與團結兩個角度說明互助價值。</div>
-                <div class="topic-step"><strong>關鍵字：</strong>flooded streets, victims, volunteers, supplies, emotional support, empathy</div>
-              </div>
-              <div class="topic-actions"><button class="btn btn-primary btn-small" data-use-topic="disaster">先自己寫這一題</button></div>
-              <details class="answer-reveal">
-                <summary>我已完成架構，顯示中英對照答案</summary>
-                <div class="bilingual">
-                  <div class="bilingual-row"><p>When a natural disaster such as an earthquake or flood strikes, it often brings great destruction and loss to people's lives.</p><p class="zh">當地震或水災等天災發生時，往往會對人們的生活造成巨大的破壞與損失。</p></div>
-                  <div class="bilingual-row"><p>In the first picture, the streets are flooded, and residents are struggling in knee-deep dirty water, carrying what little they could save.</p><p class="zh">第一個情景中，街道被洪水淹沒，居民在及膝汙水中艱難前行。</p></div>
-                  <div class="bilingual-row"><p>Their worried faces show fear and exhaustion, reflecting the hopelessness many victims feel during such disasters.</p><p class="zh">他們憂慮的臉龐顯示恐懼與疲憊，也反映受災者的無助。</p></div>
-                  <div class="bilingual-row"><p>In contrast, the second picture presents a warmer scene.</p><p class="zh">相較之下，第二個情景更加溫暖。</p></div>
-                  <div class="bilingual-row"><p>Volunteers are smiling while distributing hot meals and bottled water to those in need at a temporary shelter.</p><p class="zh">志工在臨時避難所面帶微笑，將熱食與瓶裝水分送給有需要的人。</p></div>
-                  <div class="bilingual-row"><p>These two scenes clearly show the dark side of disaster and the bright side of human kindness.</p><p class="zh">兩個情景展現災難的黑暗面與人性的光輝。</p></div>
-                  <div class="bilingual-row"><p>In my opinion, the spirit of mutual help and volunteer work is one of the most valuable things we can see during a disaster.</p><p class="zh">在我看來，互助與志願服務是災難中最珍貴的精神之一。</p></div>
-                  <div class="bilingual-row"><p>First, it gives people hope and emotional support when they feel lost.</p><p class="zh">首先，它能在受災者感到迷惘時給予希望與情感支持。</p></div>
-                  <div class="bilingual-row"><p>When I saw news about the 2024 earthquake in Hualien, I was touched by how volunteers traveled long distances to deliver meals and blankets to victims.</p><p class="zh">看到 2024 年花蓮地震的新聞時，我很感動許多志工遠道而來送上熱食與毛毯。</p></div>
-                  <div class="bilingual-row"><p>Second, volunteering not only helps others but also teaches us the meaning of empathy and unity.</p><p class="zh">其次，志願服務不只幫助他人，也教會我們同理心與團結。</p></div>
-                  <div class="bilingual-row"><p>To sum up, even though disasters bring pain and fear, they also remind us that kindness and cooperation can overcome hardship.</p><p class="zh">總而言之，災難雖帶來痛苦與恐懼，也提醒我們善良與合作能克服困難。</p></div>
-                </div>
-              </details>
-            </div>
-          </details>
-        </div>
+    <section class="shell workspace" id="workshop" role="tabpanel" aria-labelledby="tab-workshop" tabindex="0">
+      <div class="section-heading">
+        <h2>換一題，自己寫</h2>
+        <p>選一題，直接寫兩段英文。卡住時可以展開提示，寫完再打開範文對照。</p>
       </div>
+      <div class="writing-topics" role="group" aria-label="選擇寫作題目">
+        <button type="button" data-load-topic="robot" aria-pressed="false"><small>113 年學測</small><strong>機器人幫手</strong></button>
+        <button type="button" data-load-topic="marketing" aria-pressed="false"><small>115 年模擬考</small><strong>飢餓行銷與折扣促銷</strong></button>
+        <button type="button" data-load-topic="disaster" aria-pressed="false"><small>115 年預測題</small><strong>災害與志願服務</strong></button>
+        <button type="button" data-load-topic="park" aria-pressed="false"><small>111 年學測</small><strong>再寫一次理想公園</strong></button>
+      </div>
+
+      <section id="writingEditor" aria-labelledby="writingTitle" hidden>
+        <header class="writing-header">
+          <h3 id="writingTitle" tabindex="-1"></h3>
+          <span>兩段合計，目標 120 個英文單字以上</span>
+          <a id="writingLessonLink" href="#lesson-picker">用七關練這一題 →</a>
+        </header>
+        <details class="writing-disclosure" id="writingParkReference" hidden>
+          <summary>查看公園題圖片</summary>
+          <img src="assets/111-gsat-english-park.png" alt="圖 A 的公園有溜滑梯和攀爬架，圖 B 的公園有樹蔭與大片草地。" loading="lazy">
+        </details>
+        <details class="writing-disclosure" id="writingNotes" hidden>
+          <summary>查看舊工作桌筆記</summary>
+          <dl></dl>
+        </details>
+        <div class="writing-paragraphs">
+          <section class="writing-paragraph" aria-labelledby="writingLabel1">
+            <label id="writingLabel1" for="writingP1">第一段</label>
+            <p id="writingTask1"></p>
+            <textarea id="writingP1" lang="en" rows="6" aria-describedby="writingTask1" placeholder="在這裡寫第一段英文……"></textarea>
+            <details id="writingHint1" class="writing-disclosure">
+              <summary>第一段卡住了？看提示</summary>
+              <ul></ul>
+            </details>
+          </section>
+          <section class="writing-paragraph" aria-labelledby="writingLabel2">
+            <label id="writingLabel2" for="writingP2">第二段</label>
+            <p id="writingTask2"></p>
+            <textarea id="writingP2" lang="en" rows="6" aria-describedby="writingTask2" placeholder="在這裡寫第二段英文……"></textarea>
+            <details id="writingHint2" class="writing-disclosure">
+              <summary>第二段卡住了？看提示</summary>
+              <ul></ul>
+            </details>
+          </section>
+        </div>
+        <footer class="writing-footer">
+          <p><strong id="wordCount">0</strong> 個英文單字 · 已寫 <span id="paragraphCount">0</span> / 2 段</p>
+          <button class="btn btn-primary" type="button" id="copyDraft">複製全文</button>
+        </footer>
+        <p id="writingNotice" role="status"></p>
+        <details id="writingExample" class="writing-disclosure">
+          <summary>看看別人怎麼寫</summary>
+          <div id="writingExampleBody"></div>
+        </details>
+      </section>
     </section>
   </main>
 
   <footer class="shell">StepWrite · 讓每個句子都有任務，讓每篇作文都是自己的。</footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="workshop-drafts.js"></script>
+  <script src="workshop-examples.js"></script>
+  <script src="workshop.js"></script>
 
   <script>
-    const STORAGE_KEY = 'stepwrite-draft-v1';
-    const panels = [...document.querySelectorAll('.step-panel')];
-    const stepLinks = [...document.querySelectorAll('.step-link')];
-    const persistFields = [...document.querySelectorAll('.persist')];
-    let activeStep = 0;
-    let saveTimer;
-
     const pageTablist = document.querySelector('.top-links');
     const pageTabs = [...pageTablist.querySelectorAll('[role="tab"]')];
 
@@ -1037,6 +674,7 @@
     }
 
     function restorePageFromURL() {
+      if (location.hash === '#topics') history.replaceState(history.state, '', '#workshop');
       const target = document.getElementById(location.hash.slice(1));
       const panel = target?.closest('main > [role="tabpanel"]');
       selectPage(panel?.id || 'learn');
@@ -1086,477 +724,11 @@
       }
     });
 
-    const topicSeeds = {
-      park: {
-        title: '111 年公園題',
-        prompt: '111 年學測：文長至少 120 個單詞，分兩段。第一段描述圖 A、圖 B 中公園的特色；第二段說明心目中理想公園的樣貌與特色，並解釋理由。',
-        p1task: '描述圖 A、圖 B 中公園各有何特色。',
-        p2task: '說明我理想公園的樣貌與特色，並解釋理由；可以選擇或結合兩圖特色。',
-        a1: 'slides and climbing frames', a2: 'children can use the equipment to play', a3: '',
-        b1: 'tall trees and a lawn', b2: 'people can walk or rest in this green space', b3: '',
-        contrast: 'the first park has playground equipment, while the second has more natural space',
-        stance: 'a natural park with trees and open space',
-        reason1: 'it helps me relax after a busy school day',
-        detail1: 'I can walk under the trees and listen to birds',
-        reason2: 'it gives my family space to spend time together',
-        detail2: 'We can have a picnic on the grass and talk about our week',
-      },
-      robot: {
-        title: '113 年機器人題',
-        prompt: '從青少年常見問題中選一項最想解決的問題，並說明你希望機器人幫手具備哪些功能。',
-        p1task: '選擇情緒起伏，說明它造成的影響與可能原因。',
-        p2task: '設計能偵測情緒、安撫自己並提供健康提醒的機器人。',
-        a1: 'mood swings', a2: 'Mood swings make it hard to focus on schoolwork.', a3: 'They can also hurt our relationships with others.',
-        b1: 'Academic pressure can make teenagers feel stressed.', b2: 'Relationship problems can also affect their emotions.', b3: 'Many teenagers feel angry or sad for no clear reason.',
-        contrast: 'teenagers face too much pressure from studies and relationships',
-        stance: 'I would like a robot helper to help me manage my emotions',
-        reason1: 'it could detect my mood through my voice and facial expressions',
-        detail1: 'when it notices that I am upset, it could comfort me with calm words or play my favorite music.',
-        reason2: 'it could remind me to calm down in healthy ways',
-        detail2: 'It could ask me to take deep breaths or go outside for a walk.'
-      },
-      marketing: {
-        title: '115 年模擬考',
-        prompt: '比較飢餓行銷與折扣促銷，並說明哪一種方式更能促使消費者花錢。',
-        p1task: '說明兩種促銷手法的運作方式與共同目的。',
-        p2task: '選擇較有效的手法，並用理由與個人經驗支持。',
-        a1: 'hunger marketing', a2: 'Hunger marketing creates scarcity by limiting the quantity of products or the time available to buy them.', a3: 'This makes customers feel that they must buy quickly.',
-        b1: 'discount promotion', b2: 'Discount promotion lowers prices directly.', b3: 'Lower prices encourage people to purchase more.',
-        contrast: 'they influence consumers in different psychological ways',
-        stance: 'discount promotion is more effective in encouraging people to spend money',
-        reason1: 'people can clearly see how much money they save',
-        detail1: 'I once bought a pair of shoes simply because it was 50% off.',
-        reason2: 'discounts attract a wider range of customers',
-        detail2: 'They appeal to people who are price-sensitive or not loyal to a particular brand.'
-      },
-      disaster: {
-        title: '115 年預測題',
-        prompt: '描述災害中的兩種不同情景，並說明你對互助與志願服務的看法和觀察。',
-        p1task: '對比受災者的困境與志工提供協助的情景。',
-        p2task: '說明互助如何帶來希望、同理心與團結。',
-        a1: 'residents in flooded streets', a2: 'The residents struggle through knee-deep dirty water.', a3: 'The residents look fearful and exhausted.',
-        b1: 'volunteers at a temporary shelter', b2: 'The volunteers distribute hot meals and bottled water.', b3: 'The scene feels warm and hopeful.',
-        contrast: 'one scene shows the pain of disaster, while the other shows human kindness',
-        stance: 'mutual help and volunteer work are extremely valuable during a disaster',
-        reason1: 'they give victims hope and emotional support',
-        detail1: 'Volunteers can deliver meals and blankets to families staying in temporary shelters.',
-        reason2: 'volunteering teaches us empathy and unity',
-        detail2: 'By giving our time and effort, we make society more caring and connected.'
-      }
-    };
-
-    const draftFieldIds = ['p1s1', 'p1s2', 'p1s3', 'p1s4', 'p2s1', 'p2s2', 'p2s3', 'p2s4', 'p2s5', 'p2s6', 'finalDraft'];
-    const draftFeedback = {};
-
-    function setDraftFeedback(id, message) {
-      const field = document.getElementById(id);
-      const note = document.getElementById(`${id}Note`);
-      field.setAttribute('data-needs-review', String(Boolean(message)));
-      note.textContent = message;
-      note.hidden = !message;
-      if (message) draftFeedback[id] = { message, value: field.value };
-      else delete draftFeedback[id];
-    }
-
-    function writeDraftField(id, build, notes) {
-      const start = notes.length;
-      document.getElementById(id).value = build();
-      setDraftFeedback(id, notes.slice(start).join(' '));
-    }
-
-    function sentence(text) {
-      const clean = text.trim();
-      if (!clean) return '';
-      return /[.!?]$/.test(clean) ? clean : `${clean}.`;
-    }
-
-    function cleanMaterial(text) {
-      return text.trim().replace(/[.!?]+$/, '').trim();
-    }
-
-    function capitalizeSentence(text) {
-      return text.replace(/^([a-z])/, letter => letter.toUpperCase());
-    }
-
-    // This is a conservative format check, not an English grammar checker.
-    // Keep complete clauses separate instead of guessing relative clauses or subjects.
-    function looksLikeClause(text) {
-      const clean = cleanMaterial(text);
-      // These are explicit subject-led inputs: retain the student's sentence
-      // even when its verb is outside the small scaffold vocabulary below.
-      if (/^(?:I|you|we|they|he|she|it|people|children|families|teenagers|volunteers|my family|our family|my friends|our friends)\s+(?!to\b)\S+/i.test(clean)) return true;
-      const predicatePattern = /\b(?:am|is|are|was|were|has|have|had|can|could|will|would|should|must|may|might|do|does|did|help|helps|relax|relaxes|give|gives|walk|walks|listen|listens|play|plays|rest|rests|enjoy|enjoys|feel|feels|make|makes|hurt|hurts|face|faces|create|creates|lower|lowers|encourage|encourages|influence|influences|attract|attracts|appeal|appeals|struggle|struggles|distribute|distributes|look|looks|offer|offers|focus|focuses|show|shows|prefer|prefers|want|wants|like|likes|love|loves|need|needs|teach|teaches|bought|spent|went|saw|felt|taught|traveled|travelled|delivered|played|walked|enjoyed|helped)\b/gi;
-      const predicate = [...clean.matchAll(predicatePattern)].find(match => match.index > 0);
-      if (!predicate || predicate.index === 0) return false;
-      const subject = clean.slice(0, predicate.index).trim();
-      if (/^(?:to|because|although|while)\b/i.test(clean) && !clean.includes(',')) return false;
-      if (/^(?:a|an|the)\b/i.test(subject) && /\b(?:that|which|who|where)\b/i.test(subject)) return false;
-      return /[a-z]/i.test(subject) && !/^(?:to|not|also|sometimes|often|usually)$/i.test(subject);
-    }
-
-    function expandPictureAction(raw, id) {
-      const topic = document.getElementById('selectedTopic').value || 'park';
-      if (!['park', 'disaster'].includes(topic) || !['a2', 'b2'].includes(id)) return raw;
-      // Reuse only an explicitly named plural group from the companion field.
-      // Scenery such as "trees" must never become the subject of "play".
-      const people = cleanMaterial(document.getElementById(id[0] + '1').value).match(/^(?:(?:many|some|several|a few|the|these|those)\s+)?(children|people|families|visitors|volunteers|residents|teenagers|students|tourists)(?:\s+(?:in|at|on|near|under|by)\s+[^.!?]+)?$/i);
-      if (people && /^(?:play|walk|rest|enjoy|sit|run|talk|listen|struggle|distribute)\b/i.test(raw)) {
-        return `${capitalizeSentence(people[1].toLowerCase())} ${raw.replace(/^\w+/, word => word.toLowerCase())}`;
-      }
-      return raw;
-    }
-
-    function draftSentence(id, label, notes, prefix = '', optional = false) {
-      const source = cleanMaterial(document.getElementById(id).value);
-      const raw = expandPictureAction(source, id);
-      if (!raw && optional) return '';
-      if (/[\u3400-\u9fff]/.test(raw)) {
-        notes.push(`「${label}」的素材含中文，尚未放入英文草稿。請改成英文完整句；原素材：${source}`);
-        return '';
-      }
-      if (!raw || !looksLikeClause(raw)) {
-        notes.push(raw ? `系統無法確認「${label}」的句型，已保留英文素材供你修改。請檢查主詞和動詞；原素材：${source}` : `${label}還沒有內容，請補上完整句。`);
-        return raw ? sentence(capitalizeSentence(raw)) : '';
-      }
-      // A transition is followed by a separate complete sentence. This also
-      // preserves proper names and avoids changing "I" into lowercase "i".
-      if (!prefix || /^(?:first|second|to begin with|in addition|for example|overall|personally|in my opinion|by contrast|in contrast)\b/i.test(raw)) {
-        return sentence(capitalizeSentence(raw));
-      }
-      const linked = /^(?:I\b|[A-Z][a-z]+[A-Z])/.test(raw) ? raw : raw.replace(/^(The|This|That|These|Those|It|They|We|My|Our|Your|His|Her|Their|People|Children|Families|When|If|After|Before|During|On|At|In|A|An|Discount|Hunger|Lower|Teenagers|Volunteers|Academic|Relationship)\b/, word => word.toLowerCase());
-      return sentence(`${prefix}${linked}`);
-    }
-
-    function pictureMaterial(id, lead, label, notes) {
-      const raw = cleanMaterial(document.getElementById(id).value);
-      if (!raw) {
-        notes.push(`${label}還沒有內容。`);
-        return '';
-      }
-      if (/[\u3400-\u9fff]/.test(raw)) {
-        notes.push(`「${label}」的素材含中文，尚未放入英文草稿；原素材：${raw}`);
-        return '';
-      }
-      if (looksLikeClause(raw)) return sentence(capitalizeSentence(raw));
-      if (/^(?:play|walk|rest|enjoy|feel|help|make|give|have|can|could|would|to)\b/i.test(raw)) {
-        notes.push(`${label}請填人物／物品片語，或補成完整句；原素材：${raw}`);
-        return sentence(capitalizeSentence(raw));
-      }
-      return sentence(`${lead}${raw}`);
-    }
-
-    function parkAtmosphere(id, notes) {
-      const raw = cleanMaterial(document.getElementById(id).value);
-      if (!raw) return '';
-      if (/[\u3400-\u9fff]/.test(raw)) return draftSentence(id, id === 'a3' ? '圖 A 的氣氛' : '圖 B 的氣氛', notes, '', true);
-      if (looksLikeClause(raw)) return sentence(capitalizeSentence(raw));
-      // Known adjective phrases can be scaffolded safely. Other input is left
-      // for the student to finish, rather than guessed into an "is ..." clause.
-      if (/^(?:very |quite |rather )?(?:lively|cheerful|quiet|peaceful|calm|relaxing|exciting|busy|crowded|noisy|beautiful|green|natural|spacious|fun|safe)(?:\s+(?:and|or)\s+(?:very |quite )?(?:lively|cheerful|quiet|peaceful|calm|relaxing|exciting|busy|crowded|noisy|beautiful|green|natural|spacious|fun|safe))*$/i.test(raw)) {
-        return sentence(`The park feels ${raw}`);
-      }
-      return draftSentence(id, id === 'a3' ? '圖 A 的氣氛' : '圖 B 的氣氛', notes, '', true);
-    }
-
-    function reportBuild(id, notes, message) {
-      document.getElementById(id).textContent = notes.length
-        ? '部分素材需要補寫或確認，請看各草稿格下方的提醒。中文提示不會放進英文草稿；其他句子也請自行檢查。'
-        : '基本草稿已帶入。請朗讀並檢查文法，再確認每個例子是否支持對應理由；工具不會判斷內容品質。';
-      afterProgrammaticChange(notes.length ? '部分素材需要確認格式，請看組句按鈕下方的提示。' : message);
-    }
-
-    function confirmParagraphBuild(ids) {
-      return !ids.some(id => document.getElementById(id).value.trim())
-        || confirm('這會以目前素材重新產生這一段，取代你在本段改寫的句子。要繼續嗎？');
-    }
-
-    function buildParagraphOne() {
-      if (!confirmParagraphBuild(['p1s1', 'p1s2', 'p1s3', 'p1s4'])) return;
-      const topic = document.getElementById('selectedTopic').value || 'park';
-      const notes = [];
-      const write = (id, build) => writeDraftField(id, build, notes);
-      const clause = (id, label, prefix = '', optional = false) => draftSentence(id, label, notes, prefix, optional);
-      if (topic === 'robot') {
-        write('p1s1', () => pictureMaterial('a1', 'Among the problems shown, I would most like to solve ', '問題名稱', notes));
-        write('p1s2', () => [clause('a2', '問題影響'), clause('a3', '另一個影響', '', true)].filter(Boolean).join(' '));
-        write('p1s3', () => [clause('b1', '壓力來源一'), clause('b2', '壓力來源二'), clause('b3', '常見感受', '', true)].filter(Boolean).join(' '));
-        write('p1s4', () => clause('contrast', '問題原因'));
-      } else if (topic === 'marketing') {
-        write('p1s1', () => [pictureMaterial('a1', 'The first strategy is ', '手法 A 名稱', notes), pictureMaterial('b1', 'The second strategy is ', '手法 B 名稱', notes)].filter(Boolean).join(' '));
-        write('p1s2', () => [clause('a2', '手法 A 做法'), clause('a3', '手法 A 影響', '', true)].filter(Boolean).join(' '));
-        write('p1s3', () => [clause('b2', '手法 B 做法', 'In contrast, '), clause('b3', '手法 B 影響', '', true)].filter(Boolean).join(' '));
-        write('p1s4', () => clause('contrast', '兩種手法的差異', 'Overall, '));
-      } else {
-        write('p1s1', () => topic === 'disaster'
-          ? 'Natural disasters often bring destruction and loss, but they can also reveal human kindness.'
-          : 'The two pictures show two different types of parks.');
-        write('p1s2', () => [pictureMaterial('a1', 'Picture A shows ', '圖 A 的人物或物品', notes), clause('a2', '圖 A 的動作'), topic === 'park' ? parkAtmosphere('a3', notes) : clause('a3', '圖 A 的感受', '', true)].filter(Boolean).join(' '));
-        write('p1s3', () => [pictureMaterial('b1', 'By contrast, Picture B shows ', '圖 B 的人物或物品', notes), clause('b2', '圖 B 的動作'), topic === 'park' ? parkAtmosphere('b3', notes) : clause('b3', '圖 B 的感受', '', true)].filter(Boolean).join(' '));
-        write('p1s4', () => clause('contrast', '核心差異', 'Overall, ', topic === 'park'));
-      }
-      reportBuild('buildP1Notice', notes, '第一段基本草稿已帶入，請依照你的意思修改。');
-    }
-
-    function buildParagraphTwo() {
-      if (!confirmParagraphBuild(['p2s1', 'p2s2', 'p2s3', 'p2s4', 'p2s5', 'p2s6'])) return;
-      const topic = document.getElementById('selectedTopic').value || 'park';
-      const notes = [];
-      const write = (id, build) => writeDraftField(id, build, notes);
-      const stance = cleanMaterial(document.getElementById('stance').value);
-      if (topic === 'park' && stance && !/[\u3400-\u9fff]/.test(stance) && !looksLikeClause(stance) && /^(?:a|an|the|my)\s/i.test(stance)) {
-        write('p2s1', () => sentence(`Personally, I prefer ${stance}`));
-      } else if (topic === 'robot' && !/[\u3400-\u9fff]/.test(stance) && /^it to\s/i.test(stance)) {
-        // Preserve compatibility with drafts created before the sentence format update.
-        write('p2s1', () => sentence(`If I had a robot helper, I would like ${stance}`));
-      } else {
-        write('p2s1', () => draftSentence('stance', '立場', notes, topic === 'park' ? 'Personally, ' : 'In my opinion, '));
-      }
-      write('p2s2', () => draftSentence('reason1', '理由一', notes, 'First, '));
-      write('p2s3', () => draftSentence('detail1', '例子一', notes, 'For example, '));
-      write('p2s4', () => draftSentence('reason2', '理由二', notes, 'Second, '));
-      write('p2s5', () => draftSentence('detail2', '例子二', notes));
-      const closings = {
-        park: 'For these reasons, this would be my ideal park.',
-        robot: 'With its help, I could learn to manage stress and stay positive when I face difficulties.',
-        marketing: 'For these reasons, I find this strategy effective.',
-        disaster: 'To sum up, kindness and cooperation can give people strength to overcome hardship.'
-      };
-      write('p2s6', () => closings[topic]);
-      reportBuild('buildP2Notice', notes, '第二段基本草稿已帶入，請把句子改成自己的說法。');
-    }
-
-    function migrateLegacyDraftNotes() {
-      const sourceByLabel = {
-        '圖 A 的人物或物品': 'a1', '圖 A 的動作': 'a2', '圖 A 的氣氛': 'a3', '圖 A 的感受': 'a3',
-        '圖 B 的人物或物品': 'b1', '圖 B 的動作': 'b2', '圖 B 的氣氛': 'b3', '圖 B 的感受': 'b3',
-        '問題名稱': 'a1', '問題影響': 'a2', '另一個影響': 'a3', '壓力來源一': 'b1', '壓力來源二': 'b2', '常見感受': 'b3',
-        '手法 A 名稱': 'a1', '手法 A 做法': 'a2', '手法 A 影響': 'a3', '手法 B 名稱': 'b1', '手法 B 做法': 'b2', '手法 B 影響': 'b3',
-        '問題原因': 'contrast', '兩種手法的差異': 'contrast', '核心差異': 'contrast',
-        '立場': 'stance', '理由一': 'reason1', '例子一': 'detail1', '理由二': 'reason2', '例子二': 'detail2'
-      };
-      draftFieldIds.forEach(id => {
-        const field = document.getElementById(id);
-        const notes = [];
-        field.value = field.value.replace(/\[([^\]\r\n]+)\]\.?/g, (whole, content) => {
-          const original = content.match(/^(.+?)：(?:請確認完整句|請確認格式)，原素材：(.*)$/);
-          const missing = content.match(/^(.+?)：請補主詞與動詞$/) || content.match(/^請補(.+)$/);
-          const label = original?.[1] || missing?.[1];
-          if (!Object.hasOwn(sourceByLabel, label)) return whole;
-          const raw = original?.[2]?.trim() || '';
-          notes.push(`「${label}」的舊版提示已移到這裡，請確認或補寫完整句。${raw ? `原素材：${raw}` : ''}`);
-          // Only recognize our exact former templates. Keep unrelated student
-          // text and brackets intact, including manually written Chinese notes.
-          return raw && !/[\u3400-\u9fff]/.test(raw)
-            ? sentence(capitalizeSentence(expandPictureAction(cleanMaterial(raw), sourceByLabel[label]))) : '';
-        });
-        if (notes.length) setDraftFeedback(id, notes.join(' '));
-      });
-    }
-
-    function assembleDraft() {
-      const p1 = ['p1s1', 'p1s2', 'p1s3', 'p1s4'].map(id => sentence(document.getElementById(id).value)).filter(Boolean).join(' ');
-      const p2 = ['p2s1', 'p2s2', 'p2s3', 'p2s4', 'p2s5', 'p2s6'].map(id => sentence(document.getElementById(id).value)).filter(Boolean).join(' ');
-      document.getElementById('finalDraft').value = [p1, p2].filter(Boolean).join('\n\n');
-      setDraftFeedback('finalDraft', draftFieldIds.filter(id => id !== 'finalDraft').some(id => draftFeedback[id])
-        ? '部分句子還有待確認的素材，請回第一段或第二段查看欄位下方的提醒。這些提醒不會加入全文。' : '');
-      saveState();
-      updateMetrics();
-    }
-
-    function showStep(index) {
-      activeStep = Math.max(0, Math.min(index, panels.length - 1));
-      panels.forEach((panel, i) => panel.classList.toggle('active', i === activeStep));
-      stepLinks.forEach((link, i) => link.classList.toggle('active', i === activeStep));
-      if (activeStep === 5 && !document.getElementById('finalDraft').value.trim()) assembleDraft();
-      updateProgress();
-      const workshop = document.getElementById('workshop');
-      if (workshop.hidden) openPage('workshop');
-      else workshop.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function stepComplete(index) {
-      const fields = [...document.querySelectorAll(`.required-${index}`)];
-      return fields.length > 0 && fields.every(hasCompletedContent);
-    }
-
-    function hasCompletedContent(field) {
-      return field.type === 'checkbox' ? field.checked : Boolean(field.value.trim())
-        && field.getAttribute('data-needs-review') !== 'true' && !/\[[^\]]*\]/.test(field.value)
-        && (!draftFieldIds.includes(field.id) || !/[\u3400-\u9fff]/.test(field.value));
-    }
-
-    function updateProgress() {
-      const required = [...document.querySelectorAll('[class*="required-"]')];
-      const completed = required.filter(hasCompletedContent).length;
-      const percent = required.length ? Math.round(completed / required.length * 100) : 0;
-      document.getElementById('progressFill').style.width = `${percent}%`;
-      document.getElementById('progressText').textContent = `${percent}%`;
-      stepLinks.forEach((link, index) => link.classList.toggle('done', stepComplete(index)));
-    }
-
-    function updateMetrics() {
-      const draft = document.getElementById('finalDraft').value.trim();
-      const words = draft.match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) || [];
-      const paragraphs = draft ? draft.split(/\n\s*\n/).filter(Boolean) : [];
-      const sentences = draft.match(/[^.!?]+[.!?]+/g) || [];
-      document.getElementById('wordCount').textContent = words.length;
-      document.getElementById('paragraphCount').textContent = paragraphs.length;
-      document.getElementById('sentenceCount').textContent = sentences.length;
-      const checks = [
-        [paragraphs.length === 2, paragraphs.length === 2 ? '已分成兩段。' : '請用一個空白行分成兩段。'],
-        [words.length >= 120, words.length >= 120 ? '已達 120 字練習目標。' : `再補約 ${Math.max(0, 120 - words.length)} 個英文單字。`],
-        [hasCompletedContent(document.getElementById('finalDraft')), !draft ? '先完成草稿，再檢查各句內容。' : draftFeedback.finalDraft ? '部分句子仍需確認，請看全文下方的提醒。' : /\[|[\u3400-\u9fff]/.test(draft) ? '請檢查草稿中的括號或中文，確認是否已改成英文內容。' : '沒有尚待處理的提示；仍需自行檢查文法與內容。'],
-        [false, '請標出每個理由的例子：它寫了什麼時候、做什麼，以及怎麼支持理由？句數不能判斷支持是否充分。']
-      ];
-      document.getElementById('feedback').innerHTML = checks.map(([ok, text]) => `<li class="${ok ? 'ok' : ''}">${ok ? '✓' : '○'} ${text}</li>`).join('');
-    }
-
-    function saveState() {
-      const state = { activeStep, draftFeedback };
-      persistFields.forEach(field => { state[field.id] = field.type === 'checkbox' ? field.checked : field.value; });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      const status = document.getElementById('saveStatus');
-      status.textContent = '已自動保存';
-      clearTimeout(saveTimer);
-      saveTimer = setTimeout(() => { status.textContent = '進度會自動保存在這台裝置'; }, 1400);
-    }
-
-    function restoreState() {
-      try {
-        const state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-        persistFields.forEach(field => {
-          if (!(field.id in state)) return;
-          if (field.type === 'checkbox') field.checked = Boolean(state[field.id]);
-          else field.value = state[field.id];
-        });
-        activeStep = Number.isInteger(state.activeStep) ? state.activeStep : 0;
-        draftFieldIds.forEach(id => {
-          const saved = state.draftFeedback?.[id];
-          if (saved && typeof saved.message === 'string' && saved.value === document.getElementById(id).value) setDraftFeedback(id, saved.message);
-        });
-        migrateLegacyDraftNotes();
-      } catch (_) {
-        localStorage.removeItem(STORAGE_KEY);
-      }
-    }
-
-    function toast(message) {
-      const element = document.getElementById('toast');
-      element.textContent = message;
-      element.classList.add('show');
-      setTimeout(() => element.classList.remove('show'), 2300);
-    }
-
-    function afterProgrammaticChange(message) {
-      saveState();
-      updateProgress();
-      updateMetrics();
-      toast(message);
-    }
-
-    const materialIds = ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'contrast', 'stance', 'reason1', 'detail1', 'reason2', 'detail2'];
-    const sentenceIds = ['p1s1', 'p1s2', 'p1s3', 'p1s4', 'p2s1', 'p2s2', 'p2s3', 'p2s4', 'p2s5', 'p2s6', 'finalDraft'];
-
-    function applyTopicLabels(topic) {
-      const labels = topic === 'robot' ? {
-        aTitle: '我最想解決的問題', aHint: '第一格填問題名稱；後兩格寫有主詞、動詞的影響句。',
-        bTitle: '問題的表現與壓力來源', bHint: '每格都寫完整句；最後一格可略過。', contrast: '我認為問題發生的主要原因（完整句）',
-        task2: '說明問題影響', help2: '寫出它如何影響課業或生活。',
-        task3: '補充另一個影響', help3: '可以加入人際影響或常見感受。',
-        task4: '說明可能原因', help4: '先用簡單完整句寫出原因，再確認和前面的問題有關。'
-      } : topic === 'marketing' ? {
-        aTitle: '手法 A：飢餓行銷', aHint: '第一格填名稱；做法與影響分別寫成完整句。',
-        bTitle: '手法 B：折扣促銷', bHint: '第一格填名稱；做法與影響分別寫成完整句。', contrast: '兩種手法影響消費者的主要差異（完整句）',
-        task2: '定義飢餓行銷', help2: '說明做法以及它引發的消費心理。',
-        task3: '對比折扣促銷', help3: '說明降價如何鼓勵購買。',
-        task4: '收束共同目的與差異', help4: '兩者都想增加銷售，但使用不同心理方式。'
-      } : topic === 'disaster' ? {
-        aTitle: '情境 A：受災者的困境', aHint: '第一格填人物片語；動作與感受各用一個完整句。',
-        bTitle: '情境 B：志工互助', bHint: '第一格填人物片語；動作與感受各用一個完整句。', contrast: '兩種情景呈現的核心對比（完整句）',
-        task2: '描述災害困境', help2: '用具體動作與表情呈現困難。',
-        task3: '轉到互助情景', help3: '用 In contrast 帶出較溫暖的畫面。',
-        task4: '收束核心對比', help4: '對比災害的痛苦與人性的善意。'
-      } : {
-        aTitle: 'Picture A／第一座公園', aHint: '先寫可見細節，再補充細節或可能用途；其他觀察可略過。用途用 can 表達。',
-        bTitle: 'Picture B／第二座公園', bHint: '用相同面向整理可見細節與可能用途；看不清楚的內容不用寫。', contrast: '兩者最重要的差異（可略過）',
-        task2: '描述 Picture A', help2: '先寫看得見的細節，再用 can 表達推想的用途。',
-        task3: '對比 Picture B', help3: '用 By contrast 或 In comparison 清楚換到另一張圖。',
-        task4: '收束主要差異（可略過）', help4: '前面已經清楚呈現差異時，不需要再重複。'
-      };
-      document.getElementById('materialATitle').textContent = labels.aTitle;
-      document.getElementById('materialAHint').textContent = labels.aHint;
-      document.getElementById('materialBTitle').textContent = labels.bTitle;
-      document.getElementById('materialBHint').textContent = labels.bHint;
-      document.getElementById('contrastLabel').textContent = labels.contrast;
-      document.getElementById('p1Task2Title').textContent = labels.task2;
-      document.getElementById('p1Task2Help').textContent = labels.help2;
-      document.getElementById('p1Task3Title').textContent = labels.task3;
-      document.getElementById('p1Task3Help').textContent = labels.help3;
-      document.getElementById('p1Task4Title').textContent = labels.task4;
-      document.getElementById('p1Task4Help').textContent = labels.help4;
-      document.getElementById('contrast').classList.toggle('required-1', topic !== 'park');
-      document.getElementById('p1s4').classList.toggle('required-2', topic !== 'park');
-      document.getElementById('contrastHint').textContent = topic === 'park'
-        ? '如果前面已經說清楚差異，這格可以留白；需要收束時，再補一句完整句。'
-        : '請用有主詞和動詞的完整句寫出原因或差異，不要只列關鍵字。';
-      document.querySelector('label[for="stance"]').textContent = topic === 'park' ? '我的理想公園／立場' : '我的立場（完整句）';
-      document.getElementById('stanceHint').textContent = topic === 'park'
-        ? '可填名詞片語，或直接寫 I prefer ... 的完整句；也可以結合兩座公園的特色。'
-        : '用完整句表達想法，包含主詞和動詞；工具會保留你的句意。';
-      const seed = topicSeeds[topic] || topicSeeds.park;
-      materialIds.forEach(id => {
-        const format = ['a1', 'b1'].includes(id) && !(topic === 'robot' && id === 'b1') ? '名詞片語'
-          : topic === 'park' && ['a3', 'b3'].includes(id) ? '其他觀察完整句（可略過）'
-          : topic === 'park' && id === 'stance' ? '名詞片語或完整句' : '完整句';
-        const field = document.getElementById(id);
-        const parkPrompts = {
-          a1: '我選出的圖 A 可見細節', a2: '圖 A 的補充細節或可能用途（用 can）', a3: '其他有依據的觀察（可略過）',
-          b1: '我選出的圖 B 可見細節', b2: '圖 B 的補充細節或可能用途（用 can）', b3: '其他有依據的觀察（可略過）',
-          contrast: '比較同一面向；前面已清楚時可略過', stance: '參照中文構思，寫出我的理想公園',
-          reason1: '支持重點 A：為什麼符合我的需要？', detail1: '何時、和誰、做什麼、帶來什麼好處？',
-          reason2: '支持重點 B：另一個不同的需要是什麼？', detail2: '這個情境如何支持第二個重點？'
-        };
-        field.placeholder = topic === 'park' ? parkPrompts[id] : `${format}：${seed[id]}`;
-        if (/^[ab][123]$/.test(id)) field.setAttribute('aria-label', `${id.startsWith('a') ? labels.aTitle : labels.bTitle}，第 ${id[1]} 格，${format}`);
-      });
-    }
-
-    function loadTopic(topic, moveToWorkshop = true) {
-      const seed = topicSeeds[topic];
-      if (!seed) return;
-      const currentTopic = document.getElementById('selectedTopic').value;
-      const hasWork = [...materialIds, ...sentenceIds].some(id => document.getElementById(id).value.trim());
-      if (hasWork && !confirm(`${topic === currentTopic ? '重新載入' : '切換'}題目會清除目前的素材與句子草稿，確定要繼續嗎？`)) return;
-      document.getElementById('selectedTopic').value = topic;
-      ['prompt', 'p1task', 'p2task'].forEach(id => { document.getElementById(id).value = seed[id]; });
-      materialIds.forEach(id => { document.getElementById(id).value = ''; });
-      sentenceIds.forEach(id => { document.getElementById(id).value = ''; });
-      draftFieldIds.forEach(id => setDraftFeedback(id, ''));
-      applyTopicLabels(topic);
-      afterProgrammaticChange(`${seed.title}已帶入。先看兩段任務，再自己想材料。`);
-      if (moveToWorkshop) showStep(0);
-    }
-
-    function loadTopicMaterials() {
-      const topic = document.getElementById('selectedTopic').value || 'park';
-      const seed = topicSeeds[topic];
-      const hasMaterials = materialIds.some(id => document.getElementById(id).value.trim());
-      if (hasMaterials && !confirm('這會用素材示範取代目前的素材，確定要繼續嗎？')) return;
-      materialIds.forEach(id => { document.getElementById(id).value = seed[id]; });
-      afterProgrammaticChange('已帶入這題的片語與短句示範；請把它們改成自己的想法。');
-      showStep(1);
-    }
-
-    document.querySelectorAll('[data-start]').forEach(button => button.addEventListener('click', () => showStep(0)));
-    document.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', () => showStep(activeStep + 1)));
-    document.querySelectorAll('[data-prev]').forEach(button => button.addEventListener('click', () => showStep(activeStep - 1)));
-    stepLinks.forEach(link => link.addEventListener('click', () => showStep(Number(link.dataset.step))));
-    document.querySelector('[data-build="p1"]').addEventListener('click', buildParagraphOne);
-    document.querySelector('[data-build="p2"]').addEventListener('click', buildParagraphTwo);
-    document.getElementById('loadTopicMaterials').addEventListener('click', loadTopicMaterials);
-    document.querySelectorAll('[data-load-topic], [data-use-topic]').forEach(button => {
-      button.addEventListener('click', () => loadTopic(button.dataset.loadTopic || button.dataset.useTopic));
+    document.querySelector('[data-start]').addEventListener('click', () => {
+      openPage('workshop');
+      document.querySelector('[data-load-topic]').focus({ preventScroll: true });
     });
+
     const exampleChips = [...document.querySelectorAll('.example-chip')];
     exampleChips.forEach(chip => chip.addEventListener('click', () => {
       const group = chip.dataset.exampleGroup;
@@ -1572,44 +744,24 @@
       target.textContent = chip.dataset.example;
       translationTarget.textContent = chip.dataset.translation;
     }));
-    document.getElementById('rebuildDraft').addEventListener('click', () => { assembleDraft(); toast('已用目前的句子重新組合全文。'); });
-    document.getElementById('finalDraft').addEventListener('input', updateMetrics);
-    persistFields.forEach(field => field.addEventListener('input', () => {
-      if (draftFieldIds.includes(field.id)) setDraftFeedback(field.id, '');
-      saveState();
-      updateProgress();
-      if (field.id === 'finalDraft') updateMetrics();
-    }));
-    persistFields.filter(field => field.type === 'checkbox').forEach(field => field.addEventListener('change', () => { saveState(); updateProgress(); }));
-
-    document.getElementById('copyDraft').addEventListener('click', async () => {
-      const draft = document.getElementById('finalDraft').value;
-      if (!draft.trim()) return toast('目前還沒有可以複製的作文。');
-      try { await navigator.clipboard.writeText(draft); toast('全文已複製。'); }
-      catch (_) { document.getElementById('finalDraft').select(); toast('已選取全文，請按 Ctrl + C 複製。'); }
-    });
-
-    document.getElementById('clearAll').addEventListener('click', () => {
-      if (!confirm('確定要清空目前所有內容嗎？這個動作無法復原。')) return;
-      persistFields.forEach(field => { if (field.type === 'checkbox') field.checked = false; else field.value = ''; });
-      draftFieldIds.forEach(id => setDraftFeedback(id, ''));
-      document.getElementById('selectedTopic').value = 'park';
-      applyTopicLabels('park');
-      localStorage.removeItem(STORAGE_KEY);
-      updateMetrics();
-      showStep(0);
-      toast('內容已清空，可以重新練習。');
-    });
-
-    restoreState();
-    applyTopicLabels(document.getElementById('selectedTopic').value || 'park');
-    panels.forEach((panel, index) => panel.classList.toggle('active', index === activeStep));
-    stepLinks.forEach((link, index) => link.classList.toggle('active', index === activeStep));
-    updateProgress();
-    updateMetrics();
   </script>
   <script>
     const parkLessonFrame = document.querySelector('#learn iframe');
+    const lessonLinks = [...document.querySelectorAll('.lesson-topic-links a')];
+    const lessonKey = new URLSearchParams(location.search).get('lesson');
+    const currentLessonLink = lessonLinks.find(link => link.dataset.lesson === lessonKey) || lessonLinks[0];
+    for (const link of lessonLinks) {
+      if (link === currentLessonLink) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    }
+    if (currentLessonLink.dataset.lesson === 'park') {
+      parkLessonFrame.src = 'burger-lab.html#embedded';
+    } else {
+      const label = currentLessonLink.querySelector('strong').textContent;
+      const source = currentLessonLink.querySelector('small').textContent;
+      parkLessonFrame.title = source + ' ' + label + '七關作文練習';
+      parkLessonFrame.src = 'burger-lab.html?lesson=' + currentLessonLink.dataset.lesson + '#embedded';
+    }
     let stickyFrameRequest = 0;
     let lastLessonOffset = -1;
     function syncLessonStickyPosition() {

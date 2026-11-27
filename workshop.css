@@ -1,0 +1,262 @@
+#workshop > .section-heading {
+  max-width: none;
+  margin-bottom: 22px;
+}
+
+.writing-topics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.writing-topics :is(button, a) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+  min-width: 0;
+  min-height: 80px;
+  padding: 12px clamp(12px, 2.2vw, 24px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: left;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.writing-topics small {
+  color: var(--muted);
+  font-size: .79rem;
+  font-weight: 650;
+}
+
+.writing-topics strong { font-size: 1.06rem; text-wrap: balance; }
+
+.writing-topics :is(button, a):hover {
+  border-color: var(--green);
+  background: var(--green-soft);
+}
+
+.writing-topics :is([aria-pressed="true"], [aria-current="page"]) {
+  border-color: var(--green-dark);
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+.writing-topics :is([aria-pressed="true"], [aria-current="page"]) small { color: var(--green-soft); }
+
+#workshop :is(button, summary, a):focus-visible,
+.lesson-topic-links a:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+#lessonPickerTitle {
+  margin-bottom: 14px;
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+
+.lesson-topic-links { margin-bottom: 24px; }
+
+#writingLessonLink {
+  color: var(--green-dark);
+  font-weight: 750;
+  text-underline-offset: .2em;
+}
+
+#writingEditor {
+  margin-top: 24px;
+  overflow-wrap: anywhere;
+  padding: clamp(18px, 3.6vw, 40px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.writing-header,
+.writing-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+}
+
+.writing-header {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.writing-header h3 {
+  margin: 0;
+  color: var(--green-dark);
+  font-size: clamp(1.4rem, 3vw, 2.15rem);
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+
+.writing-header span,
+.writing-footer p {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.writing-paragraphs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(18px, 2.5vw, 34px);
+}
+
+.writing-paragraph label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--green-dark);
+  font-size: 1.12rem;
+}
+
+.writing-paragraph > p {
+  margin: 0 0 13px;
+  line-height: 1.6;
+}
+
+.writing-paragraph textarea {
+  display: block;
+  width: 100%;
+  min-height: 12em;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", "Microsoft JhengHei", serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  resize: vertical;
+}
+
+.writing-paragraph textarea:focus {
+  border-color: var(--green);
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+}
+
+.writing-paragraph textarea::placeholder {
+  color: var(--muted);
+  font: .95rem/1.6 "Microsoft JhengHei", system-ui, sans-serif;
+  opacity: 1;
+}
+
+.writing-disclosure {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--ink);
+}
+
+#writingEditor > .writing-disclosure { margin-bottom: 16px; }
+.writing-paragraph > .writing-disclosure { margin-top: 10px; }
+
+.writing-disclosure summary {
+  min-height: 44px;
+  padding: 9px 14px;
+  border-radius: 11px;
+  color: var(--green-dark);
+  font-size: .94rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.writing-disclosure summary::marker { color: var(--green); }
+.writing-disclosure summary:hover { background: var(--green-soft); }
+.writing-disclosure[open] { border-color: var(--green); }
+.writing-disclosure[open] summary { background: var(--green-soft); border-radius: 11px 11px 0 0; }
+.writing-disclosure ul { margin: 0; padding: 12px 18px 14px 34px; }
+.writing-disclosure li + li { margin-top: 5px; }
+.writing-disclosure dl { margin: 0; padding: 14px 18px; }
+.writing-disclosure dt { font-weight: 750; color: var(--green-dark); }
+.writing-disclosure dd { margin: 0; white-space: pre-wrap; }
+.writing-disclosure dd + dt { margin-top: 12px; }
+#writingParkReference img { display: block; max-width: 100%; height: auto; margin: 12px auto; }
+
+#writingEditor > #writingExample { margin: 18px 0 0; }
+
+#writingExampleBody {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px clamp(18px, 2.5vw, 34px);
+  padding: clamp(16px, 2vw, 24px);
+}
+
+.writing-example-paragraph h4 {
+  margin: 0 0 10px;
+  color: var(--green-dark);
+  font-size: 1.05rem;
+}
+
+.writing-example-paragraph p { margin: 0; }
+
+.writing-example-paragraph p[lang="en"] {
+  font: 1.1rem/1.65 Georgia, "Times New Roman", serif;
+}
+
+.writing-example-paragraph p[lang="zh-Hant"] {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.writing-example-keywords {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .93rem;
+}
+
+.writing-example-keywords strong { margin-right: .35em; color: var(--green-dark); }
+
+.writing-footer {
+  align-items: center;
+  margin-top: 22px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.writing-footer p { margin: 0; text-align: left; }
+.writing-footer strong { color: var(--green-dark); font-size: 1.2rem; }
+
+#copyDraft:disabled {
+  transform: none;
+  box-shadow: none;
+  background: var(--cream);
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
+
+#writingNotice {
+  margin: 12px 0 0;
+  color: var(--green-dark);
+  font-size: .92rem;
+}
+
+#writingNotice:empty { margin: 0; }
+#writingCopyText { white-space: pre-wrap; overflow-wrap: anywhere; }
+.save-status.writing-save-error::before { color: #a64013; }
+
+@media (max-width: 760px) {
+  .writing-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .writing-topics :is(button, a) { min-height: 70px; }
+  .writing-paragraphs { grid-template-columns: 1fr; gap: 24px; }
+  #writingExampleBody { grid-template-columns: 1fr; }
+  .writing-paragraph textarea { min-height: 9em; }
+}

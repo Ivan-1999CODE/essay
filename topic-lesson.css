@@ -1,0 +1,44 @@
+.topic-lesson .topic-tasks,
+.topic-material-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem 1.25rem;
+}
+.topic-tasks .prompt {
+  padding: .9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: .7rem;
+  background: var(--white);
+}
+.topic-tasks .task { margin: 0; }
+.topic-tasks .prompt + .prompt .task b { background: #f3dfc4; }
+.topic-material-options { gap: .65rem; }
+.topic-lesson .choice { min-width: 0; }
+.topic-lesson .term,
+.topic-lesson .card .en,
+.topic-sentence p[lang="en"] {
+  display: block;
+  color: var(--ink);
+  font: 1.08rem/1.6 Georgia, "Microsoft JhengHei", serif;
+  overflow-wrap: anywhere;
+}
+.topic-lesson .topic-sentence { padding: .9rem 0; }
+.topic-sentence + .topic-sentence { border-top: 1px solid var(--line); }
+.topic-lesson .wh-label { font-size: .82rem; color: var(--green); }
+.topic-lesson .line-zh { margin: .25rem 0 .55rem; color: var(--muted); font-size: .9rem; }
+.topic-lesson .material-option small { font-size: .86rem; }
+.topic-lesson .material-option:focus-within { outline: 2px solid var(--green); outline-offset: 2px; }
+.topic-lesson .en + .btn, .topic-sentence .btn { margin-top: .45rem; }
+.topic-lesson .burger-card { max-width: 100%; }
+.topic-lesson .fusion-terms { display: grid; gap: .65rem; margin: .8rem 0; }
+.topic-lesson .fusion-terms label { display: grid; gap: .2rem; min-width: 0; }
+.topic-lesson .fusion-terms select { width: 100%; max-width: 100%; min-width: 0; padding: .55rem; font: inherit; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: .5rem; }
+.topic-lesson .burger-card .user-content { display: block; }
+.topic-lesson .field textarea { min-height: 4.6em; }
+.topic-lesson .case-reading .hint { margin: .85rem 0; }
+.topic-lesson .case-reading li + li { margin-top: .7em; }
+.topic-lesson .case-reading #manualCopy { display: block; width: 100%; margin-top: .8rem; min-height: 6rem; }
+@media (max-width: 700px) {
+  .topic-lesson .topic-tasks,
+  .topic-material-options { grid-template-columns: minmax(0, 1fr); }
+}
